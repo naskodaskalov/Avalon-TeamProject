@@ -1,0 +1,4 @@
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\bin\Debug\Avalon.Models.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\bin\Debug\Avalon.Models.pdb
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\obj\Debug\Avalon.Models.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\obj\Debug\Avalon.Models.pdb

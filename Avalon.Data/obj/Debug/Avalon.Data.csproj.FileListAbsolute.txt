@@ -1,0 +1,12 @@
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\Avalon.Data.dll.config
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\Avalon.Data.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\Avalon.Data.pdb
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\Avalon.Models.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\EntityFramework.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\Avalon.Models.pdb
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\EntityFramework.xml
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\obj\Debug\Avalon.Data.csprojResolveAssemblyReference.cache
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\obj\Debug\Avalon.Data.dll
+c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Data\obj\Debug\Avalon.Data.pdb
