@@ -37,7 +37,11 @@ namespace Avalon.Client
                 invalidCredentialsLabel.Content = "Passwords don't macth!";
                 invalidCredentialsLabel.Visibility = Visibility.Visible;
             }
-
+            else if (username == "" || password == "" || confirmedPassword == "")
+            {
+                invalidCredentialsLabel.Content = "All information is needed";
+                invalidCredentialsLabel.Visibility = Visibility.Visible;
+            }
             else if (UserService.IsUserExist(username.ToLower()))
             {
                 invalidCredentialsLabel.Content = "Username is taken!";
