@@ -27,3 +27,6 @@ C:\Users\Emil\documents\visual studio 2015\Projects\Avalon\Avalon.Client\bin\Deb
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon\Avalon-TeamProject\Avalon.Client\bin\Debug\Avalon.Client.exe.config
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon\Avalon-TeamProject\Avalon.Client\obj\Debug\Avalon.Client.exe
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon\Avalon-TeamProject\Avalon.Client\obj\Debug\Avalon.Client.pdb
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Client\bin\Debug\Avalon.Client.exe.config
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Client\obj\Debug\Avalon.Client.exe
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Client\obj\Debug\Avalon.Client.pdb
