@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Register" Height="230" Width="420"
+        Title="Register" Height="200" Width="400"
+        ResizeMode="NoResize"
+        WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid Width="400" Height="200">
         <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill"/>
@@ -19,6 +21,7 @@
         <Button Content="Register" Margin="0,161,139,0" Name="btnRegister" Click="btnRegister_Click" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
         <Button Content="Cancel" Margin="0,161,10,0" Name="btnCancel" Click="btnCancel_Click"  Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="55" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
         <Label Height="26" HorizontalAlignment="Right" Name="invalidCredentialsLabel" VerticalAlignment="Top" FontFamily="FontAwesome" FontSize="15" Foreground="Red" FontWeight="DemiBold" Visibility="Hidden" Width="187" Margin="0,19,60,0"/>
+        <Button Content="X" Margin="0,0,0,181" Name="btnClose" Click="btnClose_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
 
     </Grid>
 </Window>

@@ -58,5 +58,10 @@
             Register registerWin = new Register();
             registerWin.Show();
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

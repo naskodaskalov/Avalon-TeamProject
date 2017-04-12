@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Login" Height="220" Width="420"
+        Title="Login" Height="200" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
     <Grid Height="200" Width="400">
         <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill"/>
@@ -19,6 +21,7 @@
         <Button Content="Login" Margin="0,121,10,0" Name="btnLogin" Click="btnLogin_Click" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="65" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
         <Label Content="Invalid username or password" Grid.Column="1" Grid.Row="1" Height="28" HorizontalAlignment="Right" Name="invalidCredentialsLabale" VerticalAlignment="Top" FontFamily="FontAwesome" FontSize="15" Foreground="Red" FontWeight="DemiBold" Visibility="Hidden"/>
         <Button Content="Register" Margin="0,0,10,18" Name="btnRegister" Click="btnRegister_Click" Height="27" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
+        <Button Content="X" Margin="0,0,0,181" Name="btnClose" Click="btnClose_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
 
     </Grid>
 </Window>
