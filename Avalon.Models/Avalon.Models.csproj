@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,6 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Award.cs" />
+    <Compile Include="Beer.cs" />
+    <Compile Include="BeerSale.cs" />
+    <Compile Include="Brewery.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Distributor.cs" />
+    <Compile Include="Sale.cs" />
+    <Compile Include="Style.cs" />
+    <Compile Include="Town.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
