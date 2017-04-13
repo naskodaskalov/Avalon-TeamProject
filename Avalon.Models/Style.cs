@@ -16,9 +16,9 @@ namespace Avalon.Models
 
         public int? OriginId { get; set; }
 
-        public virtual Town Origin { get; set; }
+        public virtual Country Origin { get; set; }
 
-        public float ServingTemp { get; set; }
+        public string ServingTemp { get; set; }
 
         public virtual ICollection<Beer> Beers { get; set; }
 

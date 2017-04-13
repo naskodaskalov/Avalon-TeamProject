@@ -23,7 +23,6 @@ namespace Avalon.Models
         public int? StyleId { get; set; }
 
         public virtual Style Style { get; set; }
-
         public int? BreweryId { get; set; }
 
         public virtual Brewery Brewery { get; set; }

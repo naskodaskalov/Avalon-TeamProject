@@ -8,6 +8,7 @@ namespace Avalon.Models
         public Country()
         {
             this.Towns = new HashSet<Town>();
+            this.Styles = new HashSet<Style>();
         }
         public int Id { get; set; }
 
@@ -16,5 +17,7 @@ namespace Avalon.Models
         public string Continent { get; set; }
 
         public virtual ICollection<Town> Towns { get; set; }
+
+        public virtual ICollection<Style> Styles { get; set; }
     }
 }
