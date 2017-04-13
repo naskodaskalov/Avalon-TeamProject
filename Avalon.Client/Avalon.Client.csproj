@@ -120,10 +120,21 @@
       <Name>Avalon.Service</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Login-IMG.jpg" />
     <Resource Include="Images\LoginPic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cancel-btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\reg-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\login-background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

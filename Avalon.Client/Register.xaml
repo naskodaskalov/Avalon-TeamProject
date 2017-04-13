@@ -5,21 +5,114 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Register" Height="200" Width="400"
+        Title="Register" Height="582" Width="956"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
-    <Grid Width="400" Height="200">
-        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill"/>
-        <Label Content="Register Form" HorizontalAlignment="Left" Margin="0,10,0,0" Name="registerLabel" VerticalAlignment="Top" Width="148" FontFamily="FontAwesome" FontStretch="Condensed" FontWeight="Bold"  FontSize="20" Height="35"/>
-        <Label Content="Password" Margin="67,0,0,88" Name="passwordLabel" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="81" Foreground="Black" FontSize="14" FontWeight="Bold" />
-        <Label Content="Username" Margin="67,50,0,0" Name="usernameLabel" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81" Foreground="Black" FontSize="14" FontWeight="Bold" />
-        <Label Content="Confirm Password" Margin="10,0,0,54" Name="passwordConfirmLabel" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="138" Foreground="Black" FontSize="14" FontWeight="Bold" />
-        <TextBox Margin="153,0,0,122" Name="usernameTextBox" Height="28" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="187" FontFamily="FontAwesome" Background="#00000000" OpacityMask="White" BorderBrush="Black" Foreground="Black" FontSize="16" FontWeight="Bold"   />
-        <PasswordBox Margin="153,0,0,86" Name="passwordBox" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="187" FontFamily="FontAwesome" BorderBrush="Black" Background="#00000000" PasswordChar="*" OverridesDefaultStyle="False" SelectionBrush="#FFFFB14A" Height="29" VerticalAlignment="Bottom" Foreground="Black" FontSize="16" FontWeight="Bold"/>
-        <PasswordBox Margin="153,0,0,54" Name="passwordConfirmBox" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="187" FontFamily="FontAwesome" BorderBrush="Black" Background="#00000000" PasswordChar="*" OverridesDefaultStyle="False" SelectionBrush="#FFFFB14A" Height="27" VerticalAlignment="Bottom" Foreground="Black" FontSize="16" FontWeight="Bold"/>
-        <Button Content="Register" Margin="0,161,139,0" Name="btnRegister" Click="btnRegister_Click" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
-        <Button Content="Cancel" Margin="0,161,10,0" Name="btnCancel" Click="btnCancel_Click"  Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="55" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>
+    <Grid Width="956" Height="582">
+        <Image Source="/Images/reg-background.png" Stretch="UniformToFill"/>
+        <!--<Label Content="Register Form" HorizontalAlignment="Left" Margin="0,10,0,0" Name="registerLabel" VerticalAlignment="Top" Width="148" FontFamily="FontAwesome" FontStretch="Condensed" FontWeight="Bold"  FontSize="20" Height="35" Foreground="{x:Null}"/>-->
+        <!--<Label Content="Password" Margin="91,0,0,302" Name="passwordLabel" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="81" Foreground="Black" FontSize="14" FontWeight="Bold" />
+        <Label Content="Username" Margin="91,201,0,0" Name="usernameLabel" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left" Width="81" Foreground="Black" FontSize="14" FontWeight="Bold" />
+        <Label Content="Confirm Password" Margin="34,0,0,268" Name="passwordConfirmLabel" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="138" Foreground="Black" FontSize="14" FontWeight="Bold" />-->
+        <TextBox 
+            Margin="504,0,0,359" 
+            Name="usernameTextBox" 
+            Height="32" 
+            VerticalContentAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Left" 
+            Width="378" 
+            FontFamily="FontAwesome" 
+            FontSize="16" 
+            FontWeight="Bold" 
+            Background="{x:Null}" 
+            SelectionOpacity="1" 
+            SelectionBrush="#FFB9B600"   />
+        <PasswordBox 
+            Margin="504,0,0,291" 
+            Name="passwordBox" 
+            PasswordChar="*"
+            Height="32" 
+            VerticalContentAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Left" 
+            Width="378" 
+            FontFamily="FontAwesome" 
+            FontSize="16" 
+            FontWeight="Bold" 
+            Background="{x:Null}" 
+            SelectionOpacity="1" 
+            SelectionBrush="#FFB9B600"   />
+        <PasswordBox 
+            Margin="504,0,0,232" 
+            Name="passwordConfirmBox"
+            PasswordChar="*"
+            Height="32" 
+            VerticalContentAlignment="Center" 
+            VerticalAlignment="Bottom" 
+            HorizontalAlignment="Left" 
+            Width="378" 
+            FontFamily="FontAwesome" 
+            FontSize="16" 
+            FontWeight="Bold" 
+            Background="{x:Null}" 
+            SelectionOpacity="1" 
+            SelectionBrush="#FFB9B600"  />
+        <Button Content="Register Button" Name="btnRegister" Click="btnRegister_Click" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="241" Height="37" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="206,0,0,139">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="8,8,8,8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Images/btn.png" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        
+        
+        <!--<Button Content="Register" Margin="0,411,570,0" Name="btnRegister" Click="btnRegister_Click" Height="29" VerticalAlignment="Top" HorizontalAlignment="Right" Width="108" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Black" FontSize="14" FontWeight="Bold"/>-->
+        <Button Content="Cancel Button" Name="btnCancel" Click="btnCancel_Click" Cursor="Hand" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="241" Height="37" HorizontalContentAlignment="Left" BorderBrush="{x:Null}" Foreground="{x:Null}" Margin="556,0,0,139">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{x:Null}"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="8,8,8,8">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/Images/btn.png" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
         <Label Height="26" HorizontalAlignment="Right" Name="invalidCredentialsLabel" VerticalAlignment="Top" FontFamily="FontAwesome" FontSize="15" Foreground="Red" FontWeight="DemiBold" Visibility="Hidden" Width="187" Margin="0,19,60,0"/>
         <Button Content="X" Margin="0,0,0,181" Name="btnClose" Click="btnClose_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
 

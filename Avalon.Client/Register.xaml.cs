@@ -30,7 +30,7 @@ namespace Avalon.Client
             string username = usernameTextBox.Text;
             string password = passwordBox.Password;
             string confirmedPassword = passwordConfirmBox.Password;
-            
+
 
             if (password != confirmedPassword)
             {
@@ -68,7 +68,8 @@ namespace Avalon.Client
             Application.Current.Shutdown();
         }
     }
+}
+
 
     
-}
 
