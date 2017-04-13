@@ -23,6 +23,8 @@
         public Login()
         {
             InitializeComponent();
+
+            //DatabaseService.InitializeDatabase();
             
         }
 
