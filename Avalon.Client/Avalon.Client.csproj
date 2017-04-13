@@ -125,9 +125,6 @@
     <Resource Include="Images\LoginPic.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\cancel-btn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\btn.png" />
   </ItemGroup>
   <ItemGroup>

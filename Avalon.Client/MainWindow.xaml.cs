@@ -24,5 +24,65 @@ namespace Avalon.Client
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void AddClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddDistributor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddBeer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddBrewery_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddSale_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchBeer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchClient_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchSale_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SearchDistributor_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AboutApp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ExitApp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

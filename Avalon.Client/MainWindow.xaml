@@ -5,8 +5,75 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="750" Width="800">
-    <Grid>
-        <Label Content="HELLO MA MAN" FontSize="50"/>
+        Title="Main Window" Height="582" Width="956"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid Width="956" Height="582">
+        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
+        <StackPanel>
+
+
+            <StackPanel Background="Bisque">
+                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Menu Width="Auto" Height="40">
+                    <MenuItem Header="Add" FontSize="20">
+                        <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="AddClient_Click" />
+                        <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="AddDistributor_Click" />
+                        <MenuItem x:Name="AddBeer" Header="Add Beer" HorizontalAlignment="Left" Width="auto" Click="AddBeer_Click"/>
+                        <MenuItem x:Name="AddBrewery" Header="Add Brewery" HorizontalAlignment="Left" Width="auto" Click="AddBrewery_Click"/>
+                        <MenuItem x:Name="AddSale" Header="Add Sale" HorizontalAlignment="Left" Width="auto" Click="AddSale_Click"/>
+
+                    </MenuItem>
+                    <MenuItem Header="Search" FontSize="20">
+                        <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="SearchBeer_Click"/>
+                        <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="SearchClient_Click"/>
+                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto" Click="SearchSale_Click" />
+                        <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="SearchDistributor_Click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="About" FontSize="20">
+                        <MenuItem x:Name="AboutApp" Header="About App" HorizontalAlignment="Left" Width="auto" Click="AboutApp_Click"/>
+                    </MenuItem>
+
+
+                    <MenuItem Header="Exit" FontSize="20">
+                        <MenuItem x:Name="ExitApp" Header="Exit Application" HorizontalAlignment="Left" Width="auto" Click="ExitApp_Click"/>
+                    </MenuItem>
+                </Menu>
+
+            </StackPanel>
+            
+            <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="50">
+                    <Button Content="Add Client" Click="AddClient_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button Content="Add Beer" Click="AddBeer_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button Content="Add Sale" Click="AddSale_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="50">
+                    <Button Content="Search Beer" Click="SearchBeer_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button Content="Search Client" Click="SearchClient_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button Content="Search Sale" Click="SearchSale_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                </StackPanel>
+            </Grid>
+
+        </StackPanel>
+
+        <Button Content="X" Margin="0,0,0,181" Name="btnClose" Click="btnClose_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
+
     </Grid>
+
+
 </Window>
