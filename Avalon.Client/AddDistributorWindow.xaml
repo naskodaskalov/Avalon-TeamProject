@@ -1,0 +1,147 @@
+﻿<Window x:Class="Avalon.Client.AddDistributorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalon.Client"
+        mc:Ignorable="d"
+        Title="Add Distributor Window" Height="582" Width="956"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Width="956" Height="582">
+
+        <!--<Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />-->
+
+        <StackPanel>
+
+            <!--Top menu -->
+            <StackPanel Background="Bisque">
+                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold" Padding="10"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Menu Width="Auto" Height="40">
+                    <MenuItem Header="Add" FontSize="20">
+                        <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
+                        <MenuItem x:Name="AddBeer" Header="Add Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="AddBrewery" Header="Add Brewery" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="AddSale" Header="Add Sale" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+
+                    </MenuItem>
+                    <MenuItem Header="Search" FontSize="20">
+                        <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto"  Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                    </MenuItem>
+
+                    <MenuItem Header="About" FontSize="20">
+                        <MenuItem x:Name="AboutApp" Header="About App" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                    </MenuItem>
+
+
+                    <MenuItem Header="Exit" FontSize="20">
+                        <MenuItem x:Name="ExitApp" Header="Exit Application" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
+                    </MenuItem>
+                </Menu>
+
+            </StackPanel>
+            <!--End of Top menu -->
+
+            <Grid Height="475" Margin="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.3*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="0.5*"/>
+
+
+
+                </Grid.RowDefinitions>
+                <Label Content="Add new distributor to the system" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Stretch" 
+                       FontSize="20"
+                       Grid.Column="0"
+                       Grid.Row="0"
+                       Width="329" Grid.ColumnSpan="2"/>
+                <Label Content="Breweries :" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Stretch"
+                       Grid.Column="3"
+                       Grid.Row="0"
+                       FontSize="20"
+                       Width="329" Grid.ColumnSpan="2"/>
+
+
+                <!--Name Input Text + TextBox -->
+                <TextBlock Text="Name :" Grid.Column="0" Grid.Row="1" Height="30" Width="auto" Margin="15"
+                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
+                <TextBox Grid.Column="1" Grid.Row="1" Height="45" Width="200"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3" />
+
+                <!--Address Input Text + TextBox -->
+                <TextBlock Text="Address :" Grid.Column="0" Grid.Row="2" Height="30" Width="auto" Margin="15"
+                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
+                <TextBox Grid.Column="1" Grid.Row="2" Height="45" Width="200"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3" />
+
+
+                <!--Phone Input Text + TextBox -->
+                <TextBlock Text="Phone :" Grid.Column="0" Grid.Row="3" Height="30" Width="auto" Margin="15"
+                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
+                <TextBox Grid.Column="1" Grid.Row="3" Height="45" Width="200"
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3" />
+
+
+
+                <ListView Margin="10,10.4,10,0.2" Name="breweriesList" Grid.Column="2" 
+                          Grid.Row="1" Grid.RowSpan="2">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+
+
+
+
+
+
+
+                <Button x:Name="AddNewDistributor" Content="Save" 
+                        Grid.Column="2" Grid.Row="4"
+                        FontSize="20" Cursor="Hand" Padding="3" Margin="60,15,60,15" 
+                        Click="CommonMenuClickHandler" />
+
+
+
+
+
+
+            </Grid>
+
+
+
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

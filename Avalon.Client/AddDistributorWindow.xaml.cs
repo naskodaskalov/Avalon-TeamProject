@@ -10,25 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Avalon.Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddDistributorWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddDistributorWindow : Window
     {
-        public MainWindow()
+        public AddDistributorWindow()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
 
         private void CommonMenuClickHandler(object sender, RoutedEventArgs e)
         {
@@ -45,9 +40,6 @@ namespace Avalon.Client
                     break;
                 case "AddDistributor":
                     // do something here ...
-                    this.Hide();
-                    AddDistributorWindow addDistributorWin = new AddDistributorWindow();
-                    addDistributorWin.Show();
                     break;
                 case "AddBeer":
                 case "AddBeerBtn":
