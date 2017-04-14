@@ -3,11 +3,7 @@ namespace Avalon.Service
 {
     using Avalon.Data;
     using Avalon.Models;
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public static class SecurityService
     {
@@ -25,6 +21,12 @@ namespace Avalon.Service
                 return false;
             }
         }
+
+        public static User GetLoggedUser()
+        {
+            return loggedUser;
+        }
+
         public static void Logout()
         {
             loggedUser = null;
