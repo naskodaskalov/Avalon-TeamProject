@@ -56,20 +56,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddClientWindow.xaml.cs">
-      <DependentUpon>AddClientWindow.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="AddClient.xaml.cs" />
     <Compile Include="AddDistributorWindow.xaml.cs">
       <DependentUpon>AddDistributorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddTown.xaml.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-    <Page Include="AddClientWindow.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="AddClient.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="AddDistributorWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddTown.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -150,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\login-background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\beer-wallpaper.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
