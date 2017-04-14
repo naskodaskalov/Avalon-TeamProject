@@ -23,6 +23,8 @@ namespace Avalon.Client
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)
@@ -45,17 +47,16 @@ namespace Avalon.Client
                     break;
                 case "AddDistributor":
                     // do something here ...
-                    this.Hide();
+                    //this.Hide();
                    // AddDistributorWindow addDistributorWin = new AddDistributorWindow();
                     //addDistributorWin.Show();
 
                     AddDistributorWindow addDistributorWin = new AddDistributorWindow();
                     addDistributorWin.Show();
                     break;
-                case "AddBeer":
                 case "AddBeerBtn":
-
-                    // do something ...
+                    AddBeer addBeerWin = new AddBeer();
+                    addBeerWin.Show(); 
                     break;
                 case "AddBrewery":
                     // do something ...
@@ -88,6 +89,7 @@ namespace Avalon.Client
                     break;
                 case "ExitApp":
                     // do something ...
+                    Application.Current.Shutdown();
                     break;
             }
             e.Handled = true;

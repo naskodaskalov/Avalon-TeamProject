@@ -68,6 +68,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddBeer.xaml.cs" />
     <Compile Include="AddClient.xaml.cs" />
     <Compile Include="AddDistributorWindow.xaml.cs">
       <DependentUpon>AddDistributorWindow.xaml</DependentUpon>
@@ -76,6 +77,10 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddBeer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AddClient.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
