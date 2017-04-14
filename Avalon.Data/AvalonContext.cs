@@ -42,15 +42,15 @@ namespace Avalon.Data
         {
             modelBuilder.Entity<BeerSale>()
                .HasKey(bs => new { bs.BeerId, bs.SaleId });
+            
+            //modelBuilder.Entity<BeerSale>()
+            //    .HasRequired(bs => bs.Beer)
+            //    .WithMany(b => b.Sales)
+            //    .HasForeignKey(bs => bs.BeerId);
 
-            modelBuilder.Entity<BeerSale>()
-                .HasRequired(bs => bs.Beer)
-                .WithMany(b => b.Sales)
-                .HasForeignKey(bs => bs.BeerId);
-
-            modelBuilder.Entity<BeerSale>()
-                .HasRequired(bs => bs.Sale).WithMany(s => s.Beers)
-                .HasForeignKey(bs => bs.SaleId);
+            //modelBuilder.Entity<BeerSale>()
+            //    .HasRequired(bs => bs.Sale).WithMany(s => s.Beers)
+            //    .HasForeignKey(bs => bs.SaleId);
 
             modelBuilder.Entity<Brewery>()
                 .HasMany(b => b.Distributors)
@@ -73,6 +73,4 @@ namespace Avalon.Data
                 });
         }
     }
-
-
 }
