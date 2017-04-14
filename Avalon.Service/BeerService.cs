@@ -4,6 +4,7 @@ namespace Avalon.Service
     using Data;
     using Models;
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     public static class BeerService
@@ -134,6 +135,45 @@ namespace Avalon.Service
                     .FirstOrDefault(x => x.Username == SecurityService.GetLoggedUser().Username)
                     .Beers.ToList().AddRange(beers);
 
+                context.SaveChanges();
+            }
+        }
+
+        // Add Beers to Brewery
+        public static void AddBeers(string breweryName, string beerName, string beersCountStr)
+        {
+            using(var context = new AvalonContext())
+            {
+                var brewery = context.Breweries.FirstOrDefault(x => x.Name == breweryName);
+                var beer = context.Beers.FirstOrDefault(x => x.Name == beerName);
+                int beersCount;
+                var beersList = new List<Beer>();
+
+                if(brewery == null)
+                {
+                    Console.WriteLine("Invalid brewery.");
+                    return;
+                }
+
+                if(beer == null)
+                {
+                    Console.WriteLine("Invalid beer name.");
+                    return;
+                }
+
+                if(!int.TryParse(beersCountStr, out beersCount))
+                {
+                    Console.WriteLine("Beers count isn't number!");
+                    return;
+                }
+
+                for (int i = 0; i < beersCount; i++)
+                {
+                    beersList.Add(beer);
+                }
+
+                context.Breweries.FirstOrDefault(x => x.Name == breweryName).Beers.ToList().AddRange(beersList);
+                context.Beers.AddRange(beersList);
                 context.SaveChanges();
             }
         }
