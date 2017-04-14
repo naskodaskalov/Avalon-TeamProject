@@ -1,8 +1,0 @@
-c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\bin\Debug\Avalon.Models.dll
-c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\bin\Debug\Avalon.Models.pdb
-c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\obj\Debug\Avalon.Models.dll
-c:\users\emil\documents\visual studio 2015\Projects\Avalon\Avalon.Models\obj\Debug\Avalon.Models.pdb
-C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Models\bin\Debug\Avalon.Models.dll
-C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Models\bin\Debug\Avalon.Models.pdb
-C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Models\obj\Debug\Avalon.Models.dll
-C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Models\obj\Debug\Avalon.Models.pdb
