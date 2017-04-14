@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid Width="956" Height="582">
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" Opacity=".95" />
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill"  />
 
         <StackPanel>
             
