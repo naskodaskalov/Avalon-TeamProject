@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseService.cs" />
+    <Compile Include="DistributorService.cs" />
     <Compile Include="SecurityService.cs" />
     <Compile Include="TownService.cs" />
     <Compile Include="UserService.cs" />

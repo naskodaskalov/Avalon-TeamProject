@@ -8,28 +8,22 @@ using System.Threading.Tasks;
 
 namespace Avalon.Service
 {
-    public static class TownService
+    public static class DistributorService
     {
-        //public static List<Brewery> GetBreweries ()
-        //{
 
-        //    //to do 
-            
-        //}
 
-        public static void AddTown(string townName)
+
+        public static void AddDistributor(Distributor distributor)
         {
-            var newTown = new Town()
-            {
-                Name = townName
-            };
+
 
             using (var context = new AvalonContext())
             {
-                context.Towns.Add(newTown);
+                context.Distributors.Add(distributor);
                 context.SaveChanges();
             }
         }
+
 
     }
 }

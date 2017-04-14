@@ -1,4 +1,5 @@
 ﻿using Avalon.Models;
+using Avalon.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,8 @@ namespace Avalon.Client
             var brewList = new List<Brewery>();
             brewList.Add(brew);
             this.breweriesList.ItemsSource = brewList;
+            var newDistributor = new Distributor();
+            this.DataContext = newDistributor;
         }
 
 
@@ -87,6 +90,17 @@ namespace Avalon.Client
                     break;
             }
             e.Handled = true;
+        }
+
+        private void AddNewDistributor_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.TownBox.Text != null)
+            {
+                TownService.AddTown(this.TownBox.Text);
+            }
+
+            DistributorService.AddDistributor(this.DataContext as Distributor);
+            
         }
     }
 }
