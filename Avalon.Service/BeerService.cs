@@ -7,6 +7,7 @@ namespace Avalon.Service
     using System.Collections.ObjectModel;
     using System.Collections.Generic;
     using System.Linq;
+    using Models.GridModels;
 
     public static class BeerService
     {
@@ -152,6 +153,27 @@ namespace Avalon.Service
                 foreach (var style in styles)
                 {
                     result.Add(style.Name);
+                }
+                return result;
+            }
+        }
+       
+        public static ObservableCollection<BreweryGrid> GetAllBreweries()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var breweries = context.Breweries.OrderBy(b => b.Name).ToList();
+
+                ObservableCollection<BreweryGrid> result = new ObservableCollection<BreweryGrid>();
+                foreach (var brew in breweries)
+                {
+                    BreweryGrid brewGrid = new BreweryGrid()
+                    {
+                        Name = brew.Name,
+                        Town = brew.Town.Name,
+                        Address = brew.Adress
+                    };
+                    result.Add(brewGrid);
                 }
                 return result;
             }

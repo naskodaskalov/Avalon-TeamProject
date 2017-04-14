@@ -111,18 +111,26 @@
 
 
 
-                <ListView Margin="10,10.4,10,0.2" Name="breweriesList" Grid.Column="2" 
-                          Grid.Row="1" Grid.RowSpan="2" SelectionMode="Extended" >
-                    <ListView.ItemTemplate>
+                <!--<ListView  Margin="10,10.4,10,0.2" Name="breweriesList" Grid.Column="3" 
+                          Grid.Row="1" Grid.RowSpan="2" SelectionMode="Extended" >-->
+                <!--<ListView.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name}" FontWeight="Bold" />
                         </DataTemplate>
-                    </ListView.ItemTemplate>
+                    </ListView.ItemTemplate>-->
+                <ListView Name="ListView" Margin="0,0.4,10,0.2" Grid.RowSpan="2" Grid.Column="2" Grid.Row="1" FontSize="20">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Width="Auto" Header="Name" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Width="Auto" Header="Town" DisplayMemberBinding="{Binding Town}"/>
+                            <GridViewColumn Width="Auto" Header="Address" DisplayMemberBinding="{Binding Address}"/>
+                        </GridView>
+                    </ListView.View>
 
                 </ListView>
                 <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="3">
-                    
-                <Label Content="Choose Town :" 
+
+                    <Label Content="Choose Town :" 
                        HorizontalAlignment="Left" 
                        VerticalAlignment="Stretch"
                        Grid.Column="2"
@@ -131,13 +139,7 @@
                        Width="220" Grid.ColumnSpan="2"/>
 
 
-                    <Label Content="Or Create New :" 
-                       HorizontalAlignment="Left" 
-                       VerticalAlignment="Stretch"
-                       Grid.Column="2"
-                       Grid.Row="3"
-                       FontSize="20"
-                       Width="220" Grid.ColumnSpan="2"/>
+
 
                 </StackPanel>
 
@@ -148,19 +150,20 @@
                             Grid.Column="2"
                             Grid.Row="3" VerticalAlignment="Center"
                             HorizontalAlignment="Left" Margin="15"
-                            x:Name="TownsComboBox" />
-                    <TextBox Name="TownBox" Grid.Column="2" Grid.Row="3" Height="30" Width="200"
-                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3" Text="{Binding Town.Name}"/>
+                            x:Name="TownsComboBox"  SelectionChanged="TownsComboBox_SelectionChanged"/>
+
 
                 </StackPanel>
 
-                <Button x:Name="AddNewDistributor" Content="Save" 
+                <Button x:Name="SaveButton" Content="Save" 
                         Grid.Column="2" Grid.Row="4"
-                        FontSize="20" Cursor="Hand" Padding="3" Margin="60,15,60,15" 
-                        Click="AddNewDistributor_Click" />
+                        FontSize="20" Cursor="Hand" Padding="3" Margin="10,15.2,178,15.2" 
+                        Click="SaveButton_Click" />
 
-
+                <Button x:Name="CancelButton" Content="Cancel" 
+                        Grid.Column="2" Grid.Row="4"
+                        FontSize="20" Cursor="Hand" Padding="3" Margin="325,15.2,10,15.2" 
+                        Click="CancelButton_Click" />
 
 
 
