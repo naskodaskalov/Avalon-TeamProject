@@ -7,7 +7,7 @@ namespace Avalon.Models
     {
         public Beer()
         {
-            this.Sales = new HashSet<BeerSale>();
+            this.Sales = new HashSet<Sale>();
             this.Awards = new HashSet<Award>();
         }
         public int Id { get; set; }
@@ -27,7 +27,7 @@ namespace Avalon.Models
 
         public virtual Brewery Brewery { get; set; }
 
-        public virtual ICollection<BeerSale> Sales { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
 
