@@ -8,7 +8,7 @@ namespace Avalon.Service
 
     public static class BeerService
     {
-        public static void SellBeer(string customerName, string beerName, string quantityStr, string priceStr)
+        public static void SellBeers(string customerName, string beerName, string quantityStr, string priceStr)
         {
             using (var context = new AvalonContext())
             {
@@ -84,7 +84,7 @@ namespace Avalon.Service
             }
         }
 
-        public static void BuyBeer(string brandName, string quantityStr, string priceStr)
+        public static void BuyBeers(string brandName, string quantityStr, string priceStr)
         {
             using(var context = new AvalonContext())
             {
@@ -137,5 +137,7 @@ namespace Avalon.Service
                 context.SaveChanges();
             }
         }
+
+
     }
 }

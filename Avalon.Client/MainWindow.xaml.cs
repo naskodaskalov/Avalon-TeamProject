@@ -46,7 +46,7 @@ namespace Avalon.Client
                 case "AddDistributor":
                     // do something here ...
                     this.Hide();
-                    //AddDistributorWindow addDistributorWin = new AddDistributorWindow();
+                   // AddDistributorWindow addDistributorWin = new AddDistributorWindow();
                     //addDistributorWin.Show();
                     break;
                 case "AddBeer":

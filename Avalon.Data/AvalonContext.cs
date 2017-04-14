@@ -1,9 +1,7 @@
 namespace Avalon.Data
 {
     using Models;
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class AvalonContext : DbContext
     {
@@ -20,9 +18,7 @@ namespace Avalon.Data
         public virtual DbSet<Award> Awards { get; set; }
 
         public virtual DbSet<Beer> Beers { get; set; }
-
-        public virtual DbSet<BeerSale> BeerSales { get; set; }
-
+        
         public virtual DbSet<Brewery> Breweries { get; set; }
 
         public virtual DbSet<Country> Countries { get; set; }
@@ -40,8 +36,15 @@ namespace Avalon.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<BeerSale>()
-               .HasKey(bs => new { bs.BeerId, bs.SaleId });
+            modelBuilder.Entity<Beer>()
+               .HasMany(s => s.Sales)
+               .WithMany(b => b.Beers)
+               .Map(ab =>
+               {
+                   ab.ToTable("BeerSales");
+                   ab.MapLeftKey("BeerId");
+                   ab.MapRightKey("SaleId");
+               });
             
             //modelBuilder.Entity<BeerSale>()
             //    .HasRequired(bs => bs.Beer)
