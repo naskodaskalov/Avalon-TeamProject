@@ -50,6 +50,7 @@ artifacts/
 
 bin
 obj
+packages
 *.dll
 *.cache
 *.txt
