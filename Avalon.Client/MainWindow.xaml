@@ -12,42 +12,45 @@
 
     <Grid Width="956" Height="582">
         <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
+
         <StackPanel>
-
-
+            
+            
+        <!--Top menu -->
             <StackPanel Background="Bisque">
-                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold"/>
+                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold" Padding="10"/>
             </StackPanel>
 
-            <StackPanel>
-                <Menu Width="Auto" Height="40">
-                    <MenuItem Header="Add" FontSize="20">
-                        <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="AddClient_Click" />
-                        <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="AddDistributor_Click" />
-                        <MenuItem x:Name="AddBeer" Header="Add Beer" HorizontalAlignment="Left" Width="auto" Click="AddBeer_Click"/>
-                        <MenuItem x:Name="AddBrewery" Header="Add Brewery" HorizontalAlignment="Left" Width="auto" Click="AddBrewery_Click"/>
-                        <MenuItem x:Name="AddSale" Header="Add Sale" HorizontalAlignment="Left" Width="auto" Click="AddSale_Click"/>
-
+            <StackPanel >
+                <Menu Width="Auto" Height="40"  >
+                    <MenuItem Header="Add" FontSize="20" >
+                        <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
+                        <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
+                        <MenuItem x:Name="AddBeer" Header="Add Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="AddBrewery" Header="Add Brewery" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="AddSale" Header="Add Sale" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
                     </MenuItem>
                     <MenuItem Header="Search" FontSize="20">
-                        <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="SearchBeer_Click"/>
-                        <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="SearchClient_Click"/>
-                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto" Click="SearchSale_Click" />
-                        <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="SearchDistributor_Click"/>
+                        <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
+                        <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
                     </MenuItem>
 
                     <MenuItem Header="About" FontSize="20">
-                        <MenuItem x:Name="AboutApp" Header="About App" HorizontalAlignment="Left" Width="auto" Click="AboutApp_Click"/>
+                        <MenuItem x:Name="AboutApp" Header="About App" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
                     </MenuItem>
 
 
                     <MenuItem Header="Exit" FontSize="20">
-                        <MenuItem x:Name="ExitApp" Header="Exit Application" HorizontalAlignment="Left" Width="auto" Click="ExitApp_Click"/>
+                        <MenuItem x:Name="ExitApp" Header="Exit Application" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
                     </MenuItem>
                 </Menu>
 
             </StackPanel>
-            
+            <!--End of Top menu -->
+
+
             <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0"/>
 
             <Grid>
@@ -57,15 +60,15 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Grid.Column="0" Margin="50">
-                    <Button Content="Add Client" Click="AddClient_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
-                    <Button Content="Add Beer" Click="AddBeer_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
-                    <Button Content="Add Sale" Click="AddSale_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button x:Name="AddClientBtn" Content="Add Client" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
+                    <Button x:Name="AddBeerBtn" Content="Add Beer"  FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler" />
+                    <Button x:Name="AddSaleBtn" Content="Add Sale" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="50">
-                    <Button Content="Search Beer" Click="SearchBeer_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
-                    <Button Content="Search Client" Click="SearchClient_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
-                    <Button Content="Search Sale" Click="SearchSale_Click" FontSize="20" Cursor="Hand" Padding="10" Margin="15"/>
+                    <Button x:Name="SearchBeerBtn" Content="Search Beer" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler" />
+                    <Button x:Name="SearchClientBtn" Content="Search Client"  FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
+                    <Button x:Name="SearchSaleBtn" Content="Search Sale" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
                 </StackPanel>
             </Grid>
 

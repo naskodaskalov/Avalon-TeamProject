@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Avalon.Client
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddClientWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddClientWindow : Window
     {
-        public MainWindow()
+        public AddClientWindow()
         {
             InitializeComponent();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
 
         private void CommonMenuClickHandler(object sender, RoutedEventArgs e)

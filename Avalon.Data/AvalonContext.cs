@@ -11,6 +11,8 @@ namespace Avalon.Data
         public AvalonContext()
             : base("name=AvalonContext")
         {
+            //this initializes the database with test data ... uncomment only if you need it 
+            //Database.SetInitializer(new AvalonContextInitializer());
         }
 
         public virtual DbSet<User> Users { get; set; }
