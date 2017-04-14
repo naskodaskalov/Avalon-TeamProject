@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid Width="956" Height="582">
-        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill"  />
 
         <StackPanel>
             
@@ -51,7 +51,7 @@
             <!--End of Top menu -->
 
 
-            <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0"/>
+            <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0" Foreground="Turquoise"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>

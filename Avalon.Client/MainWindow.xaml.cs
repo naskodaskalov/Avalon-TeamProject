@@ -40,12 +40,14 @@ namespace Avalon.Client
 
                     // do something here ...
                     this.Hide();
-                    AddClientWindow addClientWin = new AddClientWindow();
+                    AddClient addClientWin = new AddClient();
                     addClientWin.Show();
                     break;
                 case "AddDistributor":
                     // do something here ...
                     this.Hide();
+                   // AddDistributorWindow addDistributorWin = new AddDistributorWindow();
+                    //addDistributorWin.Show();
 
                     AddDistributorWindow addDistributorWin = new AddDistributorWindow();
                     addDistributorWin.Show();

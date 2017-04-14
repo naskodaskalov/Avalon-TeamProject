@@ -8,7 +8,6 @@ namespace Avalon.Models
         public Customer()
         {
             this.Sales = new HashSet<Sale>();
-            this.Beers = new HashSet<Beer>();
         }
         [Key]
         public int Id { get; set; }
@@ -31,7 +30,5 @@ namespace Avalon.Models
         public virtual Style FavoriteStyle { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }
-
-        public virtual ICollection<Beer> Beers { get; set; }
     }
 }
