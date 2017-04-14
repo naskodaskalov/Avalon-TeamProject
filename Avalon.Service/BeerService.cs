@@ -4,11 +4,8 @@ namespace Avalon.Service
     using Data;
     using Models;
     using System;
-<<<<<<< HEAD
     using System.Collections.ObjectModel;
-=======
     using System.Collections.Generic;
->>>>>>> origin/master
     using System.Linq;
 
     public static class BeerService
@@ -159,8 +156,6 @@ namespace Avalon.Service
                 return result;
             }
         }
-<<<<<<< HEAD
-=======
 
         // Add Beers to Brewery
         public static void AddBeers(string breweryName, string beerName, string beersCountStr)
@@ -200,8 +195,6 @@ namespace Avalon.Service
                 context.SaveChanges();
             }
         }
-
-
->>>>>>> origin/master
+        
     }
 }
