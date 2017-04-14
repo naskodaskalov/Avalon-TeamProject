@@ -9,12 +9,12 @@ namespace Avalon.Service
 {
     public static class TownService
     {
-        public static List<Brewery> GetBreweries ()
-        {
+        //public static List<Brewery> GetBreweries ()
+        //{
 
-            //to do 
+        //    //to do 
             
-        }
+        //}
 
     }
 }
