@@ -24,7 +24,7 @@
         {
             InitializeComponent();
 
-            DatabaseService.InitializeDatabase();
+            //DatabaseService.InitializeDatabase();
             
         }
 

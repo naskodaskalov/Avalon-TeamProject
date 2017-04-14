@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen">
     <Grid Width="956" Height="582">
 
-        <!--<Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />-->
+        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
 
         <StackPanel>
 
@@ -109,17 +109,28 @@
 
 
                 <ListView Margin="10,10.4,10,0.2" Name="breweriesList" Grid.Column="2" 
-                          Grid.Row="1" Grid.RowSpan="2">
+                          Grid.Row="1" Grid.RowSpan="2" SelectionMode="Extended" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock FontWeight="Bold" />
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
                         </DataTemplate>
                     </ListView.ItemTemplate>
+
                 </ListView>
 
+                <Label Content="Town :" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Stretch"
+                       Grid.Column="2"
+                       Grid.Row="3"
+                       FontSize="20"
+                       Width="329" Grid.ColumnSpan="2"/>
 
-
-
+                <ComboBox Width="250" Height="30"
+                            Grid.Column="2"
+                            Grid.Row="3" VerticalAlignment="Center"
+                            HorizontalAlignment="Left" Margin="15"
+                            x:Name="TownsComboBox" />
 
 
 

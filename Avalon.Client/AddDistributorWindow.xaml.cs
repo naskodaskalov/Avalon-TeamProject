@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avalon.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,12 @@ namespace Avalon.Client
         public AddDistributorWindow()
         {
             InitializeComponent();
+
+            //hard-coded data for testing
+            var brew = new Brewery() { Name = "Brewery1" };
+            var brewList = new List<Brewery>();
+            brewList.Add(brew);
+            this.breweriesList.ItemsSource = brewList;
         }
 
 

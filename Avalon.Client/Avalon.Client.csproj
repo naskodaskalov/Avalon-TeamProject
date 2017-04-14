@@ -118,6 +118,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Avalon.Data\Avalon.Data.csproj">
+      <Project>{45b29065-475b-4847-914e-8e5f526f4513}</Project>
+      <Name>Avalon.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Avalon.Models\Avalon.Models.csproj">
       <Project>{c4fc4584-bf82-452d-9b31-6df5fa5a81d8}</Project>
       <Name>Avalon.Models</Name>
