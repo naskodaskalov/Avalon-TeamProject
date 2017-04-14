@@ -22,3 +22,15 @@ C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Da
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.csprojResolveAssemblyReference.cache
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.dll
 C:\Users\Emil\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.pdb
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\Avalon.Data.dll.config
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\Avalon.Data.dll
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\Avalon.Data.pdb
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\Avalon.Models.dll
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\EntityFramework.dll
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\Avalon.Models.pdb
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\EntityFramework.xml
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.csprojResolveAssemblyReference.cache
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.dll
+C:\Users\petar\Documents\Visual Studio 2015\Projects\Avalon-TeamProject\Avalon.Data\obj\Debug\Avalon.Data.pdb
