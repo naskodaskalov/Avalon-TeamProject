@@ -2,6 +2,7 @@
 namespace Avalon.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class Town
     {
@@ -11,8 +12,10 @@ namespace Avalon.Models
             this.Distributors = new HashSet<Distributor>();
             this.Customers = new HashSet<Customer>();
         }
+        [Key]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public string ZipCode { get; set; }

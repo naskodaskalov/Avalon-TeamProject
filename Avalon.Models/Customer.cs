@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Avalon.Models
 {
@@ -9,8 +10,10 @@ namespace Avalon.Models
             this.Sales = new HashSet<Sale>();
             this.Beers = new HashSet<Beer>();
         }
+        [Key]
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
         public string Address { get; set; }
