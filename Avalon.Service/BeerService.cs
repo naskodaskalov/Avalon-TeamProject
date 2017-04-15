@@ -11,6 +11,27 @@ namespace Avalon.Service
 
     public static class BeerService
     {
+        public static bool BeerExist(string beerName)
+        {
+            using(var db = new AvalonContext())
+            {
+                var isBeerExist = db.Beers.Any(b => b.Name == beerName);
+                if (isBeerExist)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        public static int BeerCount(string beerName)
+        {
+            using(var db = new AvalonContext())
+            {
+                return db.Beers.Where(x => x.Name == beerName).Count();
+            }
+        }
+
         //public static void SellBeers(string customerName, string beerName, string quantityStr, string priceStr)
         //{
         //    using (var context = new AvalonContext())
