@@ -15,8 +15,6 @@ namespace Avalon.Service
 
         public static void AddDistributor(Distributor distributor, string chosenTown, List<string> chosenBreweries)
         {
-
-
             using (var context = new AvalonContext())
             {
                 var town = context.Towns.Where(t => t.Name == chosenTown).FirstOrDefault();

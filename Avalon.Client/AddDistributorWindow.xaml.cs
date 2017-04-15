@@ -50,8 +50,6 @@ namespace Avalon.Client
             this.cbTowns.ItemsSource = townList;
         }
 
-       
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             var newDistributor = this.DataContext as Distributor;

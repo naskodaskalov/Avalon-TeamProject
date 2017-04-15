@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Award.cs" />
     <Compile Include="Beer.cs" />
+    <Compile Include="BeerSale.cs" />
     <Compile Include="Brewery.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="Customer.cs" />

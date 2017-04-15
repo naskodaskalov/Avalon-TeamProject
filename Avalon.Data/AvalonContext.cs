@@ -35,26 +35,21 @@ namespace Avalon.Data
 
         public virtual DbSet<Town> Towns { get; set; }
 
+        public virtual DbSet<BeerSale> BeerSales { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Beer>()
-               .HasMany(s => s.Sales)
-               .WithMany(b => b.Beers)
-               .Map(ab =>
-               {
-                   ab.ToTable("BeerSales");
-                   ab.MapLeftKey("BeerId");
-                   ab.MapRightKey("SaleId");
-               });
-            
-            //modelBuilder.Entity<BeerSale>()
-            //    .HasRequired(bs => bs.Beer)
-            //    .WithMany(b => b.Sales)
-            //    .HasForeignKey(bs => bs.BeerId);
+            modelBuilder.Entity<BeerSale>()
+               .HasKey(bs => new { bs.BeerId, bs.SaleId });
 
-            //modelBuilder.Entity<BeerSale>()
-            //    .HasRequired(bs => bs.Sale).WithMany(s => s.Beers)
-            //    .HasForeignKey(bs => bs.SaleId);
+            modelBuilder.Entity<BeerSale>()
+                .HasRequired(bs => bs.Beer)
+                .WithMany(b => b.Sales)
+                .HasForeignKey(bs => bs.BeerId);
+
+            modelBuilder.Entity<BeerSale>()
+                .HasRequired(bs => bs.Sale).WithMany(s => s.Beers)
+                .HasForeignKey(bs => bs.SaleId);
 
             modelBuilder.Entity<Brewery>()
                 .HasMany(b => b.Distributors)
