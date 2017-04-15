@@ -4,8 +4,10 @@ namespace Avalon.Service
     using Data;
     using Models;
     using System;
+    using System.Collections.ObjectModel;
     using System.Collections.Generic;
     using System.Linq;
+    using Models.GridModels;
 
     public static class BeerService
     {
@@ -87,14 +89,14 @@ namespace Avalon.Service
 
         public static void BuyBeers(string brandName, string quantityStr, string priceStr)
         {
-            using(var context = new AvalonContext())
+            using (var context = new AvalonContext())
             {
                 int quantity = 0;
                 decimal price = 0;
                 var beerProducer = context.Breweries
                                             .FirstOrDefault(x => x.Name == brandName);
 
-                if(beerProducer == null)
+                if (beerProducer == null)
                 {
                     Console.WriteLine("Invalid beer producer!");
                     return;
@@ -139,6 +141,44 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<string> GetAllBeerStyles()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                ObservableCollection<string> result = new ObservableCollection<string>();
+
+                var styles = context.Styles.OrderBy(s => s.Name).ToList();
+
+                result.Add("Select styles");
+                foreach (var style in styles)
+                {
+                    result.Add(style.Name);
+                }
+                return result;
+            }
+        }
+       
+        public static ObservableCollection<BreweryGrid> GetAllBreweries()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var breweries = context.Breweries.OrderBy(b => b.Name).ToList();
+
+                ObservableCollection<BreweryGrid> result = new ObservableCollection<BreweryGrid>();
+                foreach (var brew in breweries)
+                {
+                    BreweryGrid brewGrid = new BreweryGrid()
+                    {
+                        Name = brew.Name,
+                        Town = brew.Town.Name,
+                        Address = brew.Adress
+                    };
+                    result.Add(brewGrid);
+                }
+                return result;
+            }
+        }
+
         // Add Beers to Brewery
         public static void AddBeers(string breweryName, string beerName, string beersCountStr)
         {
@@ -177,7 +217,6 @@ namespace Avalon.Service
                 context.SaveChanges();
             }
         }
-
-
+        
     }
 }

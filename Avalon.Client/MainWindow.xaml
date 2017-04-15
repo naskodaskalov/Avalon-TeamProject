@@ -5,24 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Main Window" Height="582" Width="956"
+        Title="Avalon's Beers Platform" Height="582" Width="956"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
     <Grid Width="956" Height="582">
-        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill"  />
 
         <StackPanel>
             
             
         <!--Top menu -->
             <StackPanel Background="Bisque">
-                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold" Padding="10"/>
+                <TextBlock Text="Avalon's Beers Platform" FontSize="15" FontWeight="Bold" Padding="10"/>
             </StackPanel>
 
             <StackPanel >
-                <Menu Width="Auto" Height="40"  >
+                <Menu Width="Auto" Height="28"  >
                     <MenuItem Header="Add" FontSize="20" >
                         <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
                         <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
@@ -51,7 +51,7 @@
             <!--End of Top menu -->
 
 
-            <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0"/>
+            <TextBlock Text="QUICK LINKS" FontSize="30" FontWeight="Bold" Margin="60,100,0,0" Foreground="Turquoise"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>

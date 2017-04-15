@@ -9,6 +9,7 @@ namespace Avalon.Models
         public User()
         {
             this.Sales = new HashSet<Sale>();
+            this.Beers = new HashSet<Beer>();
         }
         
         [Key]
@@ -20,5 +21,7 @@ namespace Avalon.Models
         public string Password { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }
+
+        public virtual ICollection<Beer> Beers { get; set; }
     }
 }

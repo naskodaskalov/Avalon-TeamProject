@@ -2,6 +2,7 @@ namespace Avalon.Data
 {
     using Models;
     using System.Data.Entity;
+    using System.IO;
 
     public class AvalonContext : DbContext
     {
@@ -10,8 +11,8 @@ namespace Avalon.Data
             : base("name=AvalonContext")
         {
             //this initializes the database with test data ... uncomment only if you need it 
-            //Database.SetInitializer(new AvalonContextInitializer());
             //Database.SetInitializer(new DropCreateDatabaseAlways<AvalonContext>());
+            //Database.SetInitializer<AvalonContext>(new AvalonContextInitializer());
         }
 
         public virtual DbSet<User> Users { get; set; }
@@ -33,7 +34,6 @@ namespace Avalon.Data
         public virtual DbSet<Style> Styles { get; set; }
 
         public virtual DbSet<Town> Towns { get; set; }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

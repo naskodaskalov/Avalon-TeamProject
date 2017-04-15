@@ -47,6 +47,7 @@
     <Compile Include="Country.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Distributor.cs" />
+    <Compile Include="GridModels\BreweryGrid.cs" />
     <Compile Include="Sale.cs" />
     <Compile Include="Style.cs" />
     <Compile Include="Town.cs" />

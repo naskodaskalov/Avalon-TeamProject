@@ -13,9 +13,8 @@ namespace Avalon.Data
 
         protected override void Seed(AvalonContext context)
         {
-
-            context.Database.ExecuteSqlCommand(File.ReadAllText("../../Test data/AvalonDataInsert.sql"));
-
+           
+            context.Database.ExecuteSqlCommand(File.ReadAllText("../../data/AvalonDataInsert.sql"));
 
             base.Seed(context);
         }

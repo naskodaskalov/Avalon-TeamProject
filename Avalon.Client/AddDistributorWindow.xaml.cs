@@ -1,6 +1,9 @@
 ﻿using Avalon.Models;
+using Avalon.Models.GridModels;
+using Avalon.Service;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,14 +26,30 @@ namespace Avalon.Client
         public AddDistributorWindow()
         {
             InitializeComponent();
+            AddTownsToComboBox();
+            AddBreweriesToViewList();
 
-            //hard-coded data for testing
-            var brew = new Brewery() { Name = "Brewery1" };
-            var brewList = new List<Brewery>();
-            brewList.Add(brew);
-            this.breweriesList.ItemsSource = brewList;
+        
         }
 
+        private void AddBreweriesToViewList()
+        {
+            ObservableCollection<BreweryGrid> viewListData = BeerService.GetAllBreweries();
+
+            foreach (var brewery in viewListData)
+            {
+                this.ListView.Items.Add(brewery);
+            }
+        }
+
+        private void AddTownsToComboBox()
+        {
+            ObservableCollection<string> townList = new ObservableCollection<string>();
+            townList = AddressService.GetAllTowns();
+            TownsComboBox.SelectedIndex = 0;
+            townList.Add("Add New Town...");
+            this.TownsComboBox.ItemsSource = townList;
+        }
 
         private void CommonMenuClickHandler(object sender, RoutedEventArgs e)
         {
@@ -42,7 +61,7 @@ namespace Avalon.Client
 
                     // do something here ...
                     this.Hide();
-                    AddClientWindow addClientWin = new AddClientWindow();
+                    AddClient addClientWin = new AddClient();
                     addClientWin.Show();
                     break;
                 case "AddDistributor":
@@ -87,6 +106,30 @@ namespace Avalon.Client
                     break;
             }
             e.Handled = true;
+        }
+
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            
+        }
+
+        private void TownsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var value = TownsComboBox.SelectedItem.ToString();
+
+            if (value == "Add New Town...")
+            {
+                AddTown addTownWindow = new AddTown();
+                addTownWindow.Show();
+            }
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
     }
 }
