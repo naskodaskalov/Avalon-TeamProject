@@ -17,7 +17,7 @@ namespace Avalon.Service
             
         //}
 
-        public static void AddTown(string townName)
+        public static void AddTown(string townName, string zipCode )
         {
             var newTown = new Town()
             {
