@@ -28,95 +28,43 @@ namespace Avalon.Client
             InitializeComponent();
             AddTownsToComboBox();
             AddBreweriesToViewList();
-
+            this.DataContext = new Distributor();
+            _checkedBreweries = new List<string>();
         
         }
 
         private void AddBreweriesToViewList()
         {
-            ObservableCollection<BreweryGrid> viewListData = BeerService.GetAllBreweries();
-
-            foreach (var brewery in viewListData)
-            {
-                this.ListView.Items.Add(brewery);
-            }
+            var viewListData = new ObservableCollection<BreweryGrid>();
+            viewListData =  BeerService.GetAllBreweries();
+            this.ListBoxBreweries.ItemsSource = viewListData;
+           
         }
 
         private void AddTownsToComboBox()
         {
             ObservableCollection<string> townList = new ObservableCollection<string>();
             townList = AddressService.GetAllTowns();
-            TownsComboBox.SelectedIndex = 0;
+            cbTowns.SelectedIndex = 0;
             townList.Add("Add New Town...");
-            this.TownsComboBox.ItemsSource = townList;
+            this.cbTowns.ItemsSource = townList;
         }
 
-        private void CommonMenuClickHandler(object sender, RoutedEventArgs e)
-        {
-            FrameworkElement feSource = e.Source as FrameworkElement;
-            switch (feSource.Name)
-            {
-                case "AddClient":
-                case "AddClientBtn":
-
-                    // do something here ...
-                    this.Hide();
-                    AddClient addClientWin = new AddClient();
-                    addClientWin.Show();
-                    break;
-                case "AddDistributor":
-                    // do something here ...
-                    break;
-                case "AddBeer":
-                case "AddBeerBtn":
-
-                    // do something ...
-                    break;
-                case "AddBrewery":
-                    // do something ...
-                    break;
-                case "AddSale":
-                case "AddSaleBtn":
-
-                    // do something ...
-                    break;
-                case "SearchBeer":
-                case "SearchBeerBtn":
-
-                    // do something ...
-                    break;
-                case "SearchClient":
-                case "SearchClientBtn":
-
-                    // do something ...
-                    break;
-                case "SearchSale":
-                case "SearchSaleBtn":
-
-                    // do something ...
-                    break;
-                case "SearchDistributor":
-                    // do something ...
-                    break;
-                case "AboutApp":
-                    // do something ...
-                    break;
-                case "ExitApp":
-                    // do something ...
-                    break;
-            }
-            e.Handled = true;
-        }
+       
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            
+            var newDistributor = this.DataContext as Distributor;
+            string chosenTown = this.cbTowns.SelectedItem.ToString();
+            DistributorService.AddDistributor(newDistributor, chosenTown, _checkedBreweries);
+            this.Close();
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
         }
 
         private void TownsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var value = TownsComboBox.SelectedItem.ToString();
+            var value = cbTowns.SelectedItem.ToString();
 
             if (value == "Add New Town...")
             {
@@ -130,6 +78,21 @@ namespace Avalon.Client
             this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+        }
+
+        private List<string> _checkedBreweries;
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            string addedBrewery = ((CheckBox)sender).Content.ToString();
+            _checkedBreweries.Add(addedBrewery);
+
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            string removedBrewery = ((CheckBox)sender).Content.ToString();
+            _checkedBreweries.Remove(removedBrewery);
         }
     }
 }

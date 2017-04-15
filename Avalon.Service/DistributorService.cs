@@ -13,17 +13,26 @@ namespace Avalon.Service
 
 
 
-        public static void AddDistributor(Distributor distributor)
+        public static void AddDistributor(Distributor distributor, string chosenTown, List<string> chosenBreweries)
         {
 
 
             using (var context = new AvalonContext())
             {
+                var town = context.Towns.Where(t => t.Name == chosenTown).FirstOrDefault();
+
+                distributor.Town = town;
+
+                foreach (var brew in chosenBreweries)
+                {
+                    var brewery = context.Breweries.Where(b => b.Name == brew).FirstOrDefault();
+                    distributor.Breweries.Add(brewery);
+                }
+
                 context.Distributors.Add(distributor);
                 context.SaveChanges();
             }
         }
-
 
     }
 }

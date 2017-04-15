@@ -5,176 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Add Distributor Window" Height="582" Width="956"
-        WindowStyle="None"
+        Title="AddDistributor" Height="500" Width="500"
         ResizeMode="NoResize"
+        WindowStyle="None"
         WindowStartupLocation="CenterScreen">
-    <Grid Width="956" Height="582">
 
-        <Image Source="/Images/Login-IMG.jpg" Stretch="UniformToFill" Opacity=".65" />
+    <Window.Resources>
+        <DataTemplate x:Key="ListBoxItemTemplate" x:Name="ListboxTemplate">
 
-        <StackPanel>
+            <WrapPanel>
+                <CheckBox Focusable="False" IsChecked="False" Content="{Binding Name}" VerticalAlignment="Center" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" />
+                <!--<ContentPresenter Content="{Binding Name, Mode=OneTime}"  Margin="2,0"/>-->
+            </WrapPanel>
 
-            <!--Top menu -->
-            <StackPanel Background="Bisque">
-                <TextBlock Text="BEERS APPLICATION" FontSize="15" FontWeight="Bold" Padding="10"/>
-            </StackPanel>
+        </DataTemplate>
 
-            <StackPanel>
-                <Menu Width="Auto" Height="40">
-                    <MenuItem Header="Add" FontSize="20">
-                        <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
-                        <MenuItem x:Name="AddBeer" Header="Add Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="AddBrewery" Header="Add Brewery" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="AddSale" Header="Add Sale" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
+    </Window.Resources>
 
-                    </MenuItem>
-                    <MenuItem Header="Search" FontSize="20">
-                        <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto"  Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                    </MenuItem>
+    <Grid>
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Label Content="Add Distributor" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,425" />
+        <Label Content="Company Name" Foreground="Turquoise"  FontSize="16" Margin="10,94,171,374"/>
+        <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,167,171,300"/>
+        <Label Content="Town" Foreground="Turquoise"  FontSize="16" Margin="10,131,171,338" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Phone" Foreground="Turquoise"  FontSize="16" Margin="10,214,171,256" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Breweries" Foreground="Turquoise"  FontSize="16" Margin="10,274,171,193" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="Cancel" Click="CancelButton_Click" Margin="340,452,10,10" Width="150"/>
+        <Button Content="Add" Click="SaveButton_Click" Margin="160,452,190,10" Width="150"/>
+        <TextBox Name="ClientNameTextBox" Margin="160,94,10,374" Text="{Binding Name}"/>
+        <ComboBox Name="cbTowns" Margin="160,131,10,338"  Text="Select Options" SelectionChanged="TownsComboBox_SelectionChanged"/>
+        <TextBox Name="AddressTextBox" Margin="160,167,10,300" Text="{Binding Address}"/>
+        <TextBox Name="PhoneTextBox" Margin="160,214,10,256" Text="{Binding Phone}"/>
+        <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,62,10,411"/>
 
-                    <MenuItem Header="About" FontSize="20">
-                        <MenuItem x:Name="AboutApp" Header="About App" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                    </MenuItem>
-
-
-                    <MenuItem Header="Exit" FontSize="20">
-                        <MenuItem x:Name="ExitApp" Header="Exit Application" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
-                    </MenuItem>
-                </Menu>
-
-            </StackPanel>
-            <!--End of Top menu -->
-
-            <Grid Height="475" Margin="10">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="0.3*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="0.5*"/>
+        <ListBox Margin="160,274,10,77" HorizontalAlignment="Stretch" Name="ListBoxBreweries" 
+                 VerticalAlignment="Stretch" MinWidth="150" Foreground="Turquoise"
+                 MinHeight="40" HorizontalContentAlignment="Left" 
+                 ItemTemplate="{StaticResource ListBoxItemTemplate}" VerticalContentAlignment="Top" SelectionMode="Extended"/>
 
 
-
-                </Grid.RowDefinitions>
-                <Label Content="Add new distributor to the system" 
-                       HorizontalAlignment="Left" 
-                       VerticalAlignment="Stretch" 
-                       FontSize="20"
-                       Grid.Column="0"
-                       Grid.Row="0"
-                       Width="329" Grid.ColumnSpan="2"/>
-                <Label Content="Breweries :" 
-                       HorizontalAlignment="Left" 
-                       VerticalAlignment="Stretch"
-                       Grid.Column="3"
-                       Grid.Row="0"
-                       FontSize="20"
-                       Width="329" Grid.ColumnSpan="2"/>
-
-
-                <!--Name Input Text + TextBox -->
-                <TextBlock Text="Name :" Grid.Column="0" Grid.Row="1" Height="30" Width="auto" Margin="15"
-                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
-                <TextBox Grid.Column="1" Grid.Row="1" Height="45" Width="200"
-                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3" 
-                         Text="{Binding Name}"/>
-
-                <!--Address Input Text + TextBox -->
-                <TextBlock Text="Address :" Grid.Column="0" Grid.Row="2" Height="30" Width="auto" Margin="15"
-                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
-                <TextBox Grid.Column="1" Grid.Row="2" Height="45" Width="200"
-                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3"
-                         Text="{Binding Address}"/>
-
-
-                <!--Phone Input Text + TextBox -->
-                <TextBlock Text="Phone :" Grid.Column="0" Grid.Row="3" Height="30" Width="auto" Margin="15"
-                           HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="18" />
-                <TextBox Grid.Column="1" Grid.Row="3" Height="45" Width="200"
-                         HorizontalAlignment="Left" VerticalAlignment="Center"
-                         FontSize="18" TextWrapping="Wrap" Margin="15" Padding="3"
-                         Text="{Binding Phone}"/>
-
-
-
-                <!--<ListView  Margin="10,10.4,10,0.2" Name="breweriesList" Grid.Column="3" 
-                          Grid.Row="1" Grid.RowSpan="2" SelectionMode="Extended" >-->
-                <!--<ListView.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Name}" FontWeight="Bold" />
-                        </DataTemplate>
-                    </ListView.ItemTemplate>-->
-                <ListView Name="ListView" Margin="0,0.4,10,0.2" Grid.RowSpan="2" Grid.Column="2" Grid.Row="1" FontSize="20">
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Width="Auto" Header="Name" DisplayMemberBinding="{Binding Name}" />
-                            <GridViewColumn Width="Auto" Header="Town" DisplayMemberBinding="{Binding Town}"/>
-                            <GridViewColumn Width="Auto" Header="Address" DisplayMemberBinding="{Binding Address}"/>
-                        </GridView>
-                    </ListView.View>
-
-                </ListView>
-                <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="3">
-
-                    <Label Content="Choose Town :" 
-                       HorizontalAlignment="Left" 
-                       VerticalAlignment="Stretch"
-                       Grid.Column="2"
-                       Grid.Row="3"
-                       FontSize="20"
-                       Width="220" Grid.ColumnSpan="2"/>
-
-
-
-
-                </StackPanel>
-
-
-                <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="3">
-
-                    <ComboBox Width="150" Height="30"
-                            Grid.Column="2"
-                            Grid.Row="3" VerticalAlignment="Center"
-                            HorizontalAlignment="Left" Margin="15"
-                            x:Name="TownsComboBox"  SelectionChanged="TownsComboBox_SelectionChanged"/>
-
-
-                </StackPanel>
-
-                <Button x:Name="SaveButton" Content="Save" 
-                        Grid.Column="2" Grid.Row="4"
-                        FontSize="20" Cursor="Hand" Padding="3" Margin="10,15.2,178,15.2" 
-                        Click="SaveButton_Click" />
-
-                <Button x:Name="CancelButton" Content="Cancel" 
-                        Grid.Column="2" Grid.Row="4"
-                        FontSize="20" Cursor="Hand" Padding="3" Margin="325,15.2,10,15.2" 
-                        Click="CancelButton_Click" />
-
-
-
-
-            </Grid>
-
-
-
-
-
-
-        </StackPanel>
     </Grid>
+
+
+
+
+
+
+
+
 </Window>
