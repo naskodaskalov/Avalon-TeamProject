@@ -56,7 +56,8 @@ namespace Avalon.Client
                     addBeerWin.Show(); 
                     break;
                 case "AddBrewery":
-                    // do something ...
+                    AddBreweryWin addBreweryWin = new AddBreweryWin();
+                    addBreweryWin.Show(); 
                     break;
                 case "AddSale":
                 case "AddSaleBtn":

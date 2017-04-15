@@ -217,6 +217,47 @@ namespace Avalon.Service
         //        context.SaveChanges();
         //    }
         //}
-        
+
+        public static ObservableCollection<Beer> GetAllBeers()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var beers = context.Beers.OrderBy(b => b.Name).ToList();
+
+                var result = new ObservableCollection<Beer>();
+                foreach (var beer in beers)
+                {
+                    result.Add(beer);
+                }
+                return result;
+            }
+        }
+
+        public static void AddBrewery(Brewery brewery, string chosenTown, List<string> chosenBeers, List<string> chosenDistributors)
+        {
+            using (var context = new AvalonContext())
+            {
+                var town = context.Towns.Where(t => t.Name == chosenTown).FirstOrDefault();
+
+                brewery.Town = town;
+
+                foreach (var chosenBeer in chosenBeers)
+                {
+                    var beer = context.Beers.Where(b => b.Name == chosenBeer).FirstOrDefault();
+                    brewery.Beers.Add(beer);
+                }
+
+                foreach (var chosenDistributor in chosenDistributors)
+                {
+                    var distro = context.Distributors.Where(b => b.Name == chosenDistributor).FirstOrDefault();
+                    brewery.Distributors.Add(distro);
+                }
+
+
+                context.Breweries.Add(brewery);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

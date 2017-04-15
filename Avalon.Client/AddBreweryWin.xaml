@@ -1,0 +1,52 @@
+﻿<Window x:Class="Avalon.Client.AddBreweryWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalon.Client"
+        mc:Ignorable="d"
+       Title="Add Brewery" Height="750" Width="500"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <DataTemplate x:Key="ListBoxItemTemplateBeers" x:Name="ListboxTemplateBeers">
+            <WrapPanel>
+                <CheckBox Focusable="False" IsChecked="False" Content="{Binding Name}" VerticalAlignment="Center" Checked="BeerCheckBox_Checked" Unchecked="BeerCheckBox_Unchecked" />
+            </WrapPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="ListBoxItemTemplateDistributors" x:Name="ListboxTemplateDistributors">
+            <WrapPanel>
+                <CheckBox Focusable="False" IsChecked="False" Content="{Binding Name}" VerticalAlignment="Center" Checked="DistributorCheckBox_Checked" Unchecked="DistributorBeerCheckBox_Unchecked" />
+            </WrapPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid>
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Label Content="Add Brewery" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,678.4" />
+        <Label Content="Brewery Name" Foreground="Turquoise"  FontSize="16" Margin="10,89,369,624.4"/>
+        <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,184,382,536.4"/>
+        <Label Content="Town" Foreground="Turquoise"  FontSize="16" Margin="10,131,359,588.4" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Beers" Foreground="Turquoise"  FontSize="16" Margin="10,231,395,470.4" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Distributors" Foreground="Turquoise"  FontSize="16" Margin="10,463,345,240.4" RenderTransformOrigin="0.5,0.5"/>
+
+        <Button Content="Cancel" Click="CancelButton_Click" Margin="340,685,10,28.4" Width="150"/>
+        <Button Content="Add" Click="SaveButton_Click" Margin="160,685,190,28.4" Width="150"/>
+        <TextBox Name="BreweryNameTextBox" Margin="160,89,10,629.4" Text="{Binding Name}" />
+        <ComboBox Name="cbTowns" Margin="160,131,11,588.4" Height="auto" Text="Select Options" SelectionChanged="TownsComboBox_SelectionChanged"/>
+        <TextBox Name="AddressTextBox" Margin="160,184,10,536.4" Text="{Binding Adress}"/>
+        <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,62,10,411"/>
+
+        <ListBox Margin="160,231,10,312.4" HorizontalAlignment="Stretch" Name="ListBoxBeers" 
+                 VerticalAlignment="Stretch" MinWidth="150" Foreground="Turquoise"
+                 MinHeight="40" HorizontalContentAlignment="Left" 
+                 ItemTemplate="{StaticResource ListBoxItemTemplateBeers}" VerticalContentAlignment="Top" SelectionMode="Extended"/>
+        <ListBox Margin="160,463,10,87.4" HorizontalAlignment="Stretch" Name="ListBoxDistributors" 
+                 VerticalAlignment="Stretch" MinWidth="150" Foreground="Turquoise"
+                 MinHeight="40" HorizontalContentAlignment="Left" 
+                 ItemTemplate="{StaticResource ListBoxItemTemplateDistributors}" VerticalContentAlignment="Top" SelectionMode="Extended"/>
+
+
+    </Grid>
+</Window>
