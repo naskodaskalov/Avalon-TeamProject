@@ -37,28 +37,28 @@ namespace Avalon.Service
             }
         }
 
-        public static void AddTown(string name, string zipcode, string countryName, string continent)
-        {
-            using (AvalonContext context = new AvalonContext())
-            {
-                Country country = context.Countries.FirstOrDefault(c => c.Name.ToLower() == countryName.ToLower());
+        //public static void AddTown(string name, string zipcode, string countryName, string continent)
+        //{
+        //    using (AvalonContext context = new AvalonContext())
+        //    {
+        //        Country country = context.Countries.FirstOrDefault(c => c.Name.ToLower() == countryName.ToLower());
 
-                if (country == null)
-                {
-                    country.Name = name;
-                    country.Continent = continent;
-                }
+        //        if (country == null)
+        //        {
+        //            country.Name = name;
+        //            country.Continent = continent;
+        //        }
 
-                Town town = new Town
-                {
-                    Name = name,
-                    ZipCode = zipcode,
-                    Country = country
+        //        Town town = new Town
+        //        {
+        //            Name = name,
+        //            ZipCode = zipcode,
+        //            Country = country
 
-                };
-                context.Towns.Add(town);
-                context.SaveChanges();
-            }
-        }
+        //        };
+        //        context.Towns.Add(town);
+        //        context.SaveChanges();
+        //    }
+        //}
     }
 }

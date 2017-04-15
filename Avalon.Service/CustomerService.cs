@@ -12,7 +12,7 @@ namespace Avalon.Service
             {
                 Town town = context.Towns.FirstOrDefault(t => t.Name == townName);
                 Style style = context.Styles.FirstOrDefault(s => s.Name == styleName);
-
+                
                 Customer customer = new Customer
                 {
                     Name = name,
