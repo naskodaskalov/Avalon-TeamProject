@@ -66,7 +66,7 @@ namespace Avalon.Client
                     break;
                 case "SearchBeer":
                 case "SearchBeerBtn":
-                    SearchBeer searchBeerWindow = new SearchBeer();
+                    SearchBeerWin searchBeerWindow = new SearchBeerWin();
                     searchBeerWindow.Show();
                     break;
 
