@@ -9,6 +9,7 @@ namespace Avalon.Models
         public Distributor()
         {
             this.Breweries = new HashSet<Brewery>();
+            this.Beers = new HashSet<Beer>();
         }
         [Key]
         public int Id { get; set; }
@@ -25,6 +26,8 @@ namespace Avalon.Models
         public string Phone { get; set; }
 
         public virtual ICollection<Brewery> Breweries { get; set; }
+
+        public virtual ICollection<Beer> Beers { get; set; }
 
     }
 }

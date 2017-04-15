@@ -19,7 +19,7 @@ namespace Avalon.Models
         public string Name { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
+        public decimal SalePrice { get; set; }
 
         public int Quantity { get; set; }
 
@@ -35,6 +35,12 @@ namespace Avalon.Models
         public virtual ICollection<BeerSale> Sales { get; set; }
 
         public virtual ICollection<Award> Awards { get; set; }
+
+        public decimal? DistributorPrice { get; set; }
+
+        public int? DistributorId { get; set; }
+        
+        public virtual Distributor Distributor { get; set; }
 
     }
 }
