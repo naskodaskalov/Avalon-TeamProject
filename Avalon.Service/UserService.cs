@@ -1,8 +1,8 @@
 ﻿
 namespace Avalon.Service
 {
-    using Avalon.Data;
-    using Avalon.Models;
+    using Data;
+    using Models;
     using System.Linq;
 
     public static class UserService

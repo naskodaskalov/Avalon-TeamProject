@@ -17,15 +17,28 @@ namespace Avalon.Service
             
         //}
 
-        public static void AddTown(string townName, string zipCode )
+        public static void AddTown(string townName, string zipCode, string countryName, string continentName)
         {
-            var newTown = new Town()
-            {
-                Name = townName
-            };
-
             using (var context = new AvalonContext())
             {
+                var country = context.Countries.FirstOrDefault(x => x.Name == countryName);
+                if(country == null)
+                {
+                    country = new Country
+                    {
+                        Name = countryName
+                    };
+
+                    context.SaveChanges();
+                }
+
+                var newTown = new Town()
+                {
+                    Name = townName,
+                    Country = country,
+                    ZipCode = zipCode.ToString()
+                };
+
                 context.Towns.Add(newTown);
                 context.SaveChanges();
             }
