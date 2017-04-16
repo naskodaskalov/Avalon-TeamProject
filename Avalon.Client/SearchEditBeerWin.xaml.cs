@@ -37,8 +37,10 @@ namespace Avalon.Client
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+            EditBeerWin editBeerWin = new EditBeerWin(this.beersDatagrid.SelectedItem as Beer);
             this.Close();
-            //to do 
+            editBeerWin.Show();
+            
 
         }
 

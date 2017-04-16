@@ -5,11 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Edit beer" Height="500" Width="300"
+        Title="Edit beer" Height="507.2" Width="492.8"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="301*"/>
+            <RowDefinition Height="199*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" Grid.RowSpan="2" />
+        <Label Content="Edit Beer" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,0,226.4" />
+
+        <Label Content="Name" Foreground="Turquoise"  FontSize="16" Margin="10,72,271,197.4"/>
+        <TextBox Name="BeerName" Margin="187,72,9.8,197.6" Text="{Binding Name}"/>
+
+        <Label Content="Price" Foreground="Turquoise"  FontSize="16" Margin="10,120,271,150.4" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Name="BeerSalePrice" Margin="187,121,9.8,147.6" Text="{Binding SalePrice}" />
+
+        <Label Content="Quantity" Foreground="Turquoise"  FontSize="16" Margin="10,170,271,98.4"/>
+        <TextBox Name="Quantity" Margin="187,171,9.8,97.6" Text="{Binding Quantity}" />
+
+        <Label Content="Distributor Price" Foreground="Turquoise"  FontSize="16" Margin="10,225,270,45.4"/>
+        <TextBox Name="BeerDistributorPrice" Margin="187,225,9.8,45.6" Text="{Binding DistributorPrice}" />
+
+        <Label Content="Style" Foreground="Turquoise"  FontSize="16" Margin="10,279,271,186" Grid.RowSpan="2"/>
+        <ComboBox Name="cbStyles" Margin="187,284,9.8,186.2"  Text="Select Options" 
+                  SelectionChanged="cbStyles_SelectionChanged" Grid.RowSpan="2" SelectedItem="{Binding Path=Style.Name}"/>
+
+
+        <Label Content="Distributor" Foreground="Turquoise"  FontSize="16" Margin="10,40.6,271,128" Grid.Row="1"/>
+        <ComboBox Name="cbDistributors" Margin="187,40.4,9.8,129.2"  Text="Select Options" 
+                  SelectionChanged="cbDistributors_SelectionChanged" Grid.Row="1" SelectedItem="{Binding Path=Distributor}" />
+
+
+        <Label Content="Brewery" Foreground="Turquoise"  FontSize="16" Margin="10,91.6,270,77" Grid.Row="1"/>
+        <ComboBox Name="cbBreweries" Margin="187,91.4,9.8,77.2"  Text="Select Options" 
+                  SelectionChanged="cbBreweries_SelectionChanged" Grid.Row="1" SelectedItem="{Binding Path=Brewery}" />
+
+
+
+
+        <Button Content="Cancel" Click="btnCancel_Click" Margin="344,150.4,9.8,10.2" Grid.Row="1"/>
+        <Button Content="Save" Click="btnSave_Click" Margin="173,150.4,169.8,10.2" Grid.Row="1"/>
+        <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="195,62,195,212.4"/>
     </Grid>
 </Window>

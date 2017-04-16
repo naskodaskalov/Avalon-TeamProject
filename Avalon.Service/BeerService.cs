@@ -8,6 +8,7 @@ namespace Avalon.Service
     using System.Collections.Generic;
     using System.Linq;
     using Models.GridModels;
+    using System.Data.Entity;
 
     public static class BeerService
     {
@@ -213,6 +214,22 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<string> GetAllBreweriesNames()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var breweries = context.Breweries.OrderBy(b => b.Name).Select(b => b.Name).ToList();
+
+                ObservableCollection<string> result = new ObservableCollection<string>();
+                foreach (var brew in breweries)
+                {
+                   
+                    result.Add(brew);
+                }
+                return result;
+            }
+        }
+
         public static ObservableCollection<SalesGrid> ShowAllSales()
         {
             using (AvalonContext context = new AvalonContext())
@@ -336,7 +353,7 @@ namespace Avalon.Service
         {
             using (AvalonContext context = new AvalonContext())
             {
-                var beers = context.Beers.OrderBy(b => b.Name).ToList();
+                var beers = context.Beers.Include("Style").Include("Brewery").Include("Distributor").OrderBy(b => b.Name).ToList();
 
                 var result = new ObservableCollection<Beer>();
                 foreach (var beer in beers)
@@ -385,6 +402,41 @@ namespace Avalon.Service
                     result.Add(beer);
                 }
                 return result;
+            }
+        }
+
+        public static void UpdateBeer(Beer beerToUpdate, string newstyle, string newdistributor, string newbrewery)
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                if (newstyle != String.Empty)
+                {
+                    Style newStyle = context.Styles.Where(s => s.Name == newstyle).Include("Beers").FirstOrDefault();
+                    beerToUpdate.Style = newStyle;
+                    beerToUpdate.StyleId = newStyle.Id;
+                }
+                if (newdistributor != String.Empty)
+                {
+                    Distributor newDistributor = context.Distributors.Where(s => s.Name == newdistributor).Include("Breweries").Include("Beers").FirstOrDefault();
+                    beerToUpdate.Distributor = newDistributor;
+                    beerToUpdate.DistributorId = newDistributor.Id;
+                }
+                if (newbrewery != String.Empty)
+                {
+                    Brewery newBrewery = context.Breweries.Where(s => s.Name == newbrewery).Include("Beers").Include("Distributors").FirstOrDefault();
+                    beerToUpdate.Brewery = newBrewery;
+                    beerToUpdate.BreweryId = newBrewery.Id;
+                }
+
+                
+
+                context.Beers.Attach(beerToUpdate);
+                //context.Entry(beerToUpdate).Reference(o => o.Style).Load();
+                //context.Entry(beerToUpdate).Reference(o => o.Brewery).Load();
+                //context.Entry(beerToUpdate).Reference(o => o.Distributor).Load();
+
+                context.Entry(beerToUpdate).State = EntityState.Modified;
+                context.SaveChanges();
             }
         }
     }

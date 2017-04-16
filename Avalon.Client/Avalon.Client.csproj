@@ -80,6 +80,9 @@
       <DependentUpon>AddSaleWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddTown.xaml.cs" />
+    <Compile Include="EditBeerWin.xaml.cs">
+      <DependentUpon>EditBeerWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditBeerWin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

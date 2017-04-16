@@ -48,5 +48,20 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<string> GetAllDistributorsNames()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var distros = context.Distributors.OrderBy(b => b.Name).Select(d => d.Name).ToList();
+
+                var result = new ObservableCollection<string>();
+                foreach (var d in distros)
+                {
+                    result.Add(d);
+                }
+                return result;
+            }
+        }
+
     }
 }
