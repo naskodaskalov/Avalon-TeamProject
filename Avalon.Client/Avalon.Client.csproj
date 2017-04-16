@@ -83,13 +83,11 @@
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="ShowSales.xaml.cs">
-      <DependentUpon>ShowSales.xaml</DependentUpon>
-=======
     <Compile Include="SearchBeerWin.xaml.cs">
       <DependentUpon>SearchBeerWin.xaml</DependentUpon>
->>>>>>> origin/master
+    </Compile>
+    <Compile Include="ShowSales.xaml.cs">
+      <DependentUpon>ShowSales.xaml</DependentUpon>
     </Compile>
     <Page Include="AddBeer.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -138,13 +136,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
-    <Page Include="ShowSales.xaml">
-=======
     <Page Include="SearchBeerWin.xaml">
->>>>>>> origin/master
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShowSales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
