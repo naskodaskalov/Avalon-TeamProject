@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-       Title="Add Sale" Height="350" Width="500"
+       Title="Add Sale" Height="350" Width="600"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
@@ -21,37 +21,42 @@
 
         </Style>
         <Style x:Key="AlignRight" TargetType="{x:Type TextBlock}">
-            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="Background" Value="Black" />
             <Setter Property="Foreground" Value="Turquoise" />
         </Style>
         <Style TargetType="{x:Type DataGrid}">
-            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="Background" Value="Black" />
             <Setter Property="Foreground" Value="Turquoise" />
         </Style>
         <Style TargetType="{x:Type DataGridCell}">
-            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="Background" Value="Black" />
             <Setter Property="Foreground" Value="Turquoise" />
+
         </Style>
+        
     </Window.Resources>
 
     <Grid>
         <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
-        <Label Content="Search beer by Name:" Foreground="Turquoise" FontWeight="Bold" FontSize="20" Margin="10,10,225,288.4" />
+        <Label Content="Search beer by Name:" Foreground="Turquoise" FontWeight="Bold" FontSize="20" Margin="10,10,374,288.4" />
 
-        <Button Content="Cancel" Click="CancelButton_Click" Margin="360,300,29,20.4"/>
-        <Button Content="Add" Click="SaveButton_Click" Margin="188,300,181,20.4"/>
+        <Button Content="Cancel" Click="CancelButton_Click" Margin="443,300,29,20.4"/>
+        <Button Content="Add" Click="SaveButton_Click" Margin="263,300,198,20.4"/>
+        <Button Content="Search" Click="SearchButton_Click" Margin="472,16,18,298.4"/>
+
 
         <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,62,10,411"/>
-        
-        <TextBox Name="SearchTextBox" Margin="245,10,20,297.4" />
+
+        <TextBox Name="SearchTextBox" Margin="244,16,148,298.4" />
 
         <Grid>
             <DataGrid Name="beersDatagrid" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" 
                       CanUserReorderColumns="False" CanUserResizeColumns="True" CanUserResizeRows="False" 
-                      SelectionUnit="FullRow" SelectionMode="Single" Margin="35,80,0,72.4" Width="370">
+                      SelectionUnit="FullRow" SelectionMode="Single" Margin="35,80,0,77.4" Width="540"
+                      RowBackground="Black">
                 <DataGrid.CellStyle>
                     <Style>
                         <Style.Triggers>
@@ -64,10 +69,10 @@
                 </DataGrid.CellStyle>
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="130"/>
-                    <DataGridTextColumn Header="Price" Binding="{Binding SalePrice}" Width="80"/>
-                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="80"/>
-                    <DataGridTextColumn Header="Rating" Binding="{Binding Rating}" Width="80"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding SalePrice}" Width="130"/>
+                    <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="130"/>
+                    <DataGridTextColumn Header="Rating" Binding="{Binding Rating}" Width="130"/>
 
                 </DataGrid.Columns>
             </DataGrid>

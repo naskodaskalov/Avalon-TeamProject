@@ -40,5 +40,31 @@ namespace Avalon.Client
             this.Close();
             
         }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            string beerName = SearchTextBox.Text;
+
+            if (beerName == null || beerName.Length == 0)
+            {
+                WarningLabel.Visibility = Visibility.Visible;
+                WarningLabel.Content = "Beer name cannot be empty.";
+                return;
+            }
+
+            //var isBeerExist = BeerService.BeerExist(beerName);
+            //if (!isBeerExist)
+            //{
+            //    WarningLabel.Visibility = Visibility.Visible;
+            //    WarningLabel.Content = "There aren't any beers with this name.";
+            //    return;
+            //}
+
+            int beerCount = BeerService.BeerCount(beerName);
+
+            beersDatagrid.DataContext = BeerService.GetBeersByName(beerName);
+
+        }
+
     }
 }

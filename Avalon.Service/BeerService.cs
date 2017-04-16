@@ -280,5 +280,19 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<Beer> GetBeersByName(string name)
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var beers = context.Beers.Where(b => b.Name.Contains(name)).OrderBy(b => b.Name).ToList();
+
+                var result = new ObservableCollection<Beer>();
+                foreach (var beer in beers)
+                {
+                    result.Add(beer);
+                }
+                return result;
+            }
+        }
     }
 }

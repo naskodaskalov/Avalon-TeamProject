@@ -56,7 +56,7 @@
 
         <DataGrid Name="dataGrid" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" 
                       CanUserReorderColumns="False" CanUserResizeColumns="True" CanUserResizeRows="False" 
-                      SelectionUnit="FullRow" SelectionMode="Single" Margin="160,231,0,119.4" Width="540">
+                      SelectionUnit="FullRow" SelectionMode="Single" Margin="160,231,0,119.4" Width="540" RowBackground="Black">
             <DataGrid.CellStyle>
                 <Style>
                     <Style.Triggers>
