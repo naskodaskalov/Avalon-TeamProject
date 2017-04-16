@@ -17,33 +17,45 @@ using System.Windows.Shapes;
 namespace Avalon.Client
 {
     /// <summary>
-    /// Interaction logic for SearchBeerWin.xaml
+    /// Interaction logic for SearchEditBeerWin.xaml
     /// </summary>
-    public partial class SearchBeerWin : Window
+    public partial class SearchEditBeerWin : Window
     {
-        public SearchBeerWin()
+        public SearchEditBeerWin()
         {
             InitializeComponent();
             beersDatagrid.DataContext = BeerService.GetAllBeers();
+
         }
+
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            
+
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            AddSaleWin.AddBeerToSaleList(this.beersDatagrid.SelectedItem as Beer);
-
             this.Close();
-            
+            //to do 
+
         }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            string beerName = (this.beersDatagrid.SelectedItem as Beer).Name;
+
+            BeerService.DeleteBeer(beerName);
+            beersDatagrid.DataContext = BeerService.GetAllBeers();
+
+
+        }
+
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            string beerName = SearchTextBox.Text;
+            string beerName = SearchTextBox.Text.Trim();
 
             if (beerName == null || beerName.Length == 0)
             {
@@ -52,18 +64,8 @@ namespace Avalon.Client
                 return;
             }
 
-            //if (!isBeerExist)
-            //{
-            //    WarningLabel.Visibility = Visibility.Visible;
-            //    WarningLabel.Content = "There aren't any beers with this name.";
-            //    return;
-            //}
-
-            int beerCount = BeerService.BeerCount(beerName);
-
             beersDatagrid.DataContext = BeerService.GetBeersByName(beerName);
 
         }
-
     }
 }

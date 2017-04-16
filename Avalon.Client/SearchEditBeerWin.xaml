@@ -1,11 +1,11 @@
-﻿<Window x:Class="Avalon.Client.SearchBeerWin"
+﻿<Window x:Class="Avalon.Client.SearchEditBeerWin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-       Title="Search Add Beer" Height="350" Width="600"
+       Title="Search Edit Beer" Height="350" Width="600"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
@@ -36,7 +36,7 @@
             <Setter Property="Foreground" Value="Turquoise" />
 
         </Style>
-        
+
     </Window.Resources>
 
     <Grid>
@@ -44,7 +44,9 @@
         <Label Content="Search beer by Name:" Foreground="Turquoise" FontWeight="Bold" FontSize="20" Margin="10,10,374,288.4" />
 
         <Button Content="Cancel" Click="CancelButton_Click" Margin="443,300,29,20.4"/>
-        <Button Content="Add" Click="SaveButton_Click" Margin="263,300,198,20.4"/>
+        <Button Content="Edit" Click="EditButton_Click" Margin="263,300,198,20.4"/>
+        <Button Content="Delete" Click="DeleteButton_Click" Margin="87,300,374,20.4"/>
+
         <Button Content="Search" Click="SearchButton_Click" Margin="472,16,18,298.4"/>
 
 

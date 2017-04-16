@@ -32,6 +32,19 @@ namespace Avalon.Service
             }
         }
 
+        public static void DeleteBeer(string beerName)
+        {
+       
+            using (AvalonContext context = new AvalonContext())
+            {
+                var beer = context.Beers.Where(b => b.Name == beerName).FirstOrDefault();
+                context.Beers.Remove(beer);
+                context.SaveChanges();                
+            }
+        }
+
+    
+
         //public static void SellBeers(string customerName, string beerName, string quantityStr, string priceStr)
         //{
         //    using (var context = new AvalonContext())

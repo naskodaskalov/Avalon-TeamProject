@@ -80,11 +80,17 @@
       <DependentUpon>AddSaleWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="AddTown.xaml.cs" />
+    <Compile Include="EditBeerWin.xaml.cs">
+      <DependentUpon>EditBeerWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchBeerWin.xaml.cs">
       <DependentUpon>SearchBeerWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchEditBeerWin.xaml.cs">
+      <DependentUpon>SearchEditBeerWin.xaml</DependentUpon>
     </Compile>
     <Page Include="AddBeer.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +116,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="EditBeerWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -134,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchBeerWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchEditBeerWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
