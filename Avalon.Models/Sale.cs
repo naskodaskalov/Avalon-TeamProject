@@ -16,15 +16,12 @@ namespace Avalon.Models
 
         public DateTime Date { get; set; }
         public int? CustomerId { get; set; }
-
-        [Required]
         public virtual Customer Customer { get; set; }
 
         public virtual ICollection<BeerSale> Beers { get; set; }
 
         public int? SellerId { get; set; }
-
-        [Required]
+        
         public virtual User Seller { get; set; }
     }
 }

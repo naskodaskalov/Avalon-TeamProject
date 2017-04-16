@@ -213,6 +213,83 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<SalesGrid> ShowAllSales()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var sales = context.Sales.Select(s => new
+                {
+                    Id = s.Id,
+                    Date = s.Date,
+                    Customer = s.Customer.Name,
+                    BeersCount = s.Beers.Select(b => b.Quantity).ToList(),
+                    TotalPrice = s.Beers.Select(b=> new { BeerPrice = b.Beer.SalePrice , Quantity = b.Quantity }).ToList(),
+                    Seller = s.Seller.Username
+                });
+                ObservableCollection<SalesGrid> result = new ObservableCollection<SalesGrid>();
+
+                foreach (var sale in sales)
+                {
+                    SalesGrid saleGrid = new SalesGrid
+                    {
+                        SaleId = sale.Id,
+                        Date = sale.Date,
+                        Customer = sale.Customer,
+                        Seller = sale.Seller
+                    };
+
+                    int beerCount = 0;
+                    decimal totalPrice = 0;
+                    foreach (var q in sale.BeersCount)
+                    {
+                        beerCount += q;
+                    }
+
+                    foreach (var b in sale.TotalPrice)
+                    {
+                        totalPrice += b.BeerPrice * b.Quantity;
+                    }
+                    saleGrid.TotalPrice = totalPrice;
+                    saleGrid.BeersCount = beerCount;
+                    result.Add(saleGrid);
+                }
+                return result;
+            }
+        }
+
+        public static void AddSales()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var customer = context.Customers.Where(c=> c.Name == "Toshko").First();
+
+                Sale sale = new Sale
+                {
+                    Date = DateTime.Now,
+                    Customer = customer,
+                    SellerId = SecurityService.GetLoggedUser().Id
+                };
+                context.Sales.Add(sale);
+                BeerSale beers = new BeerSale
+                {
+                    BeerId = 1,
+                    Sale = sale,
+                    Quantity = 20
+                };
+                BeerSale beers2 = new BeerSale
+                {
+                    BeerId = 3,
+                    Sale = sale,
+                    Quantity = 13
+                };
+                sale.Beers.Add(beers);
+                sale.Beers.Add(beers2);
+                context.SaveChanges();
+            }
+        }
+
+
+
         // Add Beers to Brewery
         //public static void AddBeers(string breweryName, string beerName, string beersCountStr)
         //{

@@ -15,7 +15,7 @@ namespace Avalon.Service
             {
                 if (context.Users.Any(u => u.Username == username && u.Password == password))
                 {
-                    loggedUser = context.Users.SingleOrDefault(u => u.Username == username);
+                    loggedUser = context.Users.SingleOrDefault(u => u.Username.ToLower() == username.ToLower());
                     return true;
                 }
                 return false;

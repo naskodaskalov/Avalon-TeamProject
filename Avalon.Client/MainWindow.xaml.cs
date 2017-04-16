@@ -92,6 +92,12 @@ namespace Avalon.Client
                     // do something ...
                     Application.Current.Shutdown();
                     break;
+                case "ShowSaleBtn":
+                case "ShowSale":
+                    ShowSales showSalesWindow = new ShowSales();
+                    this.Close();
+                    showSalesWindow.Show();
+                    break;
             }
             e.Handled = true;
         }

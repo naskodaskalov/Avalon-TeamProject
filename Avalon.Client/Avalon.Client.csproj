@@ -91,6 +91,8 @@
     </Compile>
     <Compile Include="SearchEditBeerWin.xaml.cs">
       <DependentUpon>SearchEditBeerWin.xaml</DependentUpon>
+    <Compile Include="ShowSales.xaml.cs">
+      <DependentUpon>ShowSales.xaml</DependentUpon>
     </Compile>
     <Page Include="AddBeer.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -150,6 +152,9 @@
     <Page Include="SearchEditBeerWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    <Page Include="ShowSales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Themes\MetroDark\MetroDark.MSControls.Core.Implicit.xaml">
       <Generator>MSBuild:Compile</Generator>
