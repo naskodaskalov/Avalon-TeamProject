@@ -54,6 +54,14 @@ namespace Avalon.Client
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            var customerName = cbClients.SelectedItem.ToString();
+            Dictionary<string, int> beersQuantity = new Dictionary<string, int>();
+            foreach (var beer in _soldBeers)
+            {
+                beersQuantity.Add(beer.Name, beer.Quantity);
+            }
+            BeerService.AddSale(beersQuantity, customerName);
+
             this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

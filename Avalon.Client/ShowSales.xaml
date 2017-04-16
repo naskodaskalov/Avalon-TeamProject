@@ -11,8 +11,8 @@
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
-        <Label Content="All Sales" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,92,238" />
-        <ListView Name="ListViewSales" FontSize="16" FontStyle="Italic" Margin="0,0,0,79">
+        <Label Content="Sales History" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,0,351,325" />
+        <ListView Name="ListViewSales" FontSize="16" Background="Black" Opacity="0.9" FontStyle="Italic" Margin="0,66,0,79" Foreground="Turquoise">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Id" Width="Auto" DisplayMemberBinding="{Binding SaleId}"/>
@@ -24,6 +24,8 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Name ="PrintButtom"  Content="PrintSale" Margin="0,0,10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37"/>
+        <Button Name ="PrintButton"  Content="PrintSale" Margin="0,0,10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="76"/>
+        <Button Name ="BackButton"  Content="Back" Margin="0,0,92,20" Click="BackButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="69"/>
+
     </Grid>
 </Window>

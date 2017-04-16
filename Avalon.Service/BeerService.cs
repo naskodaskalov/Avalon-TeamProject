@@ -257,11 +257,12 @@ namespace Avalon.Service
             }
         }
 
-        public static void AddSales()
+        public static void AddSale(Dictionary<string,int> beers , string customerName)
         {
             using (AvalonContext context = new AvalonContext())
             {
-                var customer = context.Customers.Where(c=> c.Name == "Toshko").First();
+                var customer = context.Customers
+                    .Where(c=> c.Name.ToLower() == customerName.ToLower()).First();
 
                 Sale sale = new Sale
                 {
@@ -270,20 +271,22 @@ namespace Avalon.Service
                     SellerId = SecurityService.GetLoggedUser().Id
                 };
                 context.Sales.Add(sale);
-                BeerSale beers = new BeerSale
+
+                foreach (var b in beers)
                 {
-                    BeerId = 1,
-                    Sale = sale,
-                    Quantity = 20
-                };
-                BeerSale beers2 = new BeerSale
-                {
-                    BeerId = 3,
-                    Sale = sale,
-                    Quantity = 13
-                };
-                sale.Beers.Add(beers);
-                sale.Beers.Add(beers2);
+                    string beerName = b.Key;
+                    int quantity = b.Value;
+                    var beer = context.Beers.Where(be => be.Name.ToLower() == beerName.ToLower()).First();
+                    beer.Quantity -= quantity;
+
+                    BeerSale beerSale = new BeerSale
+                    {
+                        Beer = beer,
+                        Quantity = quantity,
+                        Sale = sale
+                    };
+                    sale.Beers.Add(beerSale);
+                }
                 context.SaveChanges();
             }
         }

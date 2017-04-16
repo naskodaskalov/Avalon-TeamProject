@@ -3,6 +3,7 @@ using Avalon.Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,14 +27,8 @@ namespace Avalon.Client
         {
             InitializeComponent();
             AddSalesToViewList();
-            //AddSales();
         }
-
-        private void AddSales()
-        {
-            BeerService.AddSales();
-        }
-
+        
         private void AddSalesToViewList()
         {
             var viewListData = new ObservableCollection<SalesGrid>();
@@ -44,6 +39,13 @@ namespace Avalon.Client
         private void btnClose_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            this.Close();
+            mainWindow.Show();
         }
     }
 }
