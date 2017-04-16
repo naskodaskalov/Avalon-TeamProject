@@ -76,12 +76,20 @@
     <Compile Include="AddDistributorWindow.xaml.cs">
       <DependentUpon>AddDistributorWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSaleWin.xaml.cs">
+      <DependentUpon>AddSaleWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddTown.xaml.cs" />
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="ShowSales.xaml.cs">
       <DependentUpon>ShowSales.xaml</DependentUpon>
+=======
+    <Compile Include="SearchBeerWin.xaml.cs">
+      <DependentUpon>SearchBeerWin.xaml</DependentUpon>
+>>>>>>> origin/master
     </Compile>
     <Page Include="AddBeer.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +106,10 @@
     <Page Include="AddDistributorWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddSaleWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddTown.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -126,7 +138,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="ShowSales.xaml">
+=======
+    <Page Include="SearchBeerWin.xaml">
+>>>>>>> origin/master
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
