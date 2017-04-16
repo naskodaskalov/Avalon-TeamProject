@@ -72,7 +72,7 @@ namespace Avalon.Client
                 newBrewery = this.cbBreweries.SelectedItem.ToString();
             }
 
-            BeerService.UpdateBeer(beerToUpdate, newStyle, newDistributor, newDistributor);
+            BeerService.UpdateBeer(beerToUpdate, newStyle, newDistributor, newBrewery);
             this.Close();
 
         }

@@ -409,6 +409,13 @@ namespace Avalon.Service
         {
             using (AvalonContext context = new AvalonContext())
             {
+                context.Beers.Attach(beerToUpdate);
+
+                context.Entry(beerToUpdate).Reference(o => o.Style).Load();
+                context.Entry(beerToUpdate).Reference(o => o.Brewery).Load();
+                context.Entry(beerToUpdate).Reference(o => o.Distributor).Load();
+
+                
                 if (newstyle != String.Empty)
                 {
                     Style newStyle = context.Styles.Where(s => s.Name == newstyle).Include("Beers").FirstOrDefault();
@@ -427,13 +434,6 @@ namespace Avalon.Service
                     beerToUpdate.Brewery = newBrewery;
                     beerToUpdate.BreweryId = newBrewery.Id;
                 }
-
-                
-
-                context.Beers.Attach(beerToUpdate);
-                //context.Entry(beerToUpdate).Reference(o => o.Style).Load();
-                //context.Entry(beerToUpdate).Reference(o => o.Brewery).Load();
-                //context.Entry(beerToUpdate).Reference(o => o.Distributor).Load();
 
                 context.Entry(beerToUpdate).State = EntityState.Modified;
                 context.SaveChanges();
