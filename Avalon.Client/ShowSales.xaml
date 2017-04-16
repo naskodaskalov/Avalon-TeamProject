@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="All Sales" Height="420" Width="600"
+        Title="All Sales" Height="420" Width="900"
         ResizeMode="NoResize"
         WindowStyle="ThreeDBorderWindow"
         WindowStartupLocation="CenterScreen">
@@ -19,7 +19,9 @@
                     <GridViewColumn Header="Date" Width="Auto" DisplayMemberBinding="{Binding Date}"/>
                     <GridViewColumn Header="Customer Name" Width="Auto" DisplayMemberBinding="{Binding Customer}"/>
                     <GridViewColumn Header="Number Of Beers" Width="Auto" DisplayMemberBinding="{Binding BeersCount}"/>
-                    <GridViewColumn Header="Total Price" Width="Auto" DisplayMemberBinding="{Binding TotalPrice}"/>
+                    <GridViewColumn Header="Total Sale Price" Width="Auto" DisplayMemberBinding="{Binding TotalSalePrice}"/>
+                    <GridViewColumn Header="Total Bought Price" Width="Auto" DisplayMemberBinding="{Binding TotalBoughtPrice}"/>
+                    <GridViewColumn Header="Profit" Width="Auto" DisplayMemberBinding="{Binding Profit}"/>
                     <GridViewColumn Header="Seller" Width="Auto" DisplayMemberBinding="{Binding Seller}"/>
                 </GridView>
             </ListView.View>

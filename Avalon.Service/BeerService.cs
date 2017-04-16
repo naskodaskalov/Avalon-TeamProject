@@ -240,7 +240,8 @@ namespace Avalon.Service
                     Date = s.Date,
                     Customer = s.Customer.Name,
                     BeersCount = s.Beers.Select(b => b.Quantity).ToList(),
-                    TotalPrice = s.Beers.Select(b=> new { BeerPrice = b.Beer.SalePrice , Quantity = b.Quantity }).ToList(),
+                    TotalSalePrice = s.Beers.Select(b => new { BeerPrice = b.Beer.SalePrice, Quantity = b.Quantity }).ToList(),
+                    TotalBoughtPrice = s.Beers.Select(b => new { BeerPrice = b.Beer.DistributorPrice, Quantity = b.Quantity }).ToList(),
                     Seller = s.Seller.Username
                 });
                 ObservableCollection<SalesGrid> result = new ObservableCollection<SalesGrid>();
@@ -256,17 +257,28 @@ namespace Avalon.Service
                     };
 
                     int beerCount = 0;
-                    decimal totalPrice = 0;
+                    decimal salePrice = 0;
+                    decimal boughtPrice = 0;
+
                     foreach (var q in sale.BeersCount)
                     {
                         beerCount += q;
                     }
 
-                    foreach (var b in sale.TotalPrice)
+                    foreach (var b in sale.TotalSalePrice)
                     {
-                        totalPrice += b.BeerPrice * b.Quantity;
+                        salePrice += (decimal)(b.BeerPrice * b.Quantity);
                     }
-                    saleGrid.TotalPrice = totalPrice;
+
+                    foreach (var b in sale.TotalBoughtPrice)
+                    {
+                        boughtPrice += (decimal)(b.BeerPrice * b.Quantity);
+                    }
+                    var profit = salePrice - boughtPrice;
+
+                    saleGrid.TotalBoughtPrice = boughtPrice;
+                    saleGrid.Profit = profit;
+                    saleGrid.TotalSalePrice = salePrice;
                     saleGrid.BeersCount = beerCount;
                     result.Add(saleGrid);
                 }

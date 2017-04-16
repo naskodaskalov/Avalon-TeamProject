@@ -12,7 +12,9 @@ namespace Avalon.Models.GridModels
         public DateTime Date { get; set; }
         public string Customer { get; set; }
         public int BeersCount { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal TotalSalePrice { get; set; }
+        public decimal TotalBoughtPrice { get; set; }
+        public decimal Profit { get; set; }
         public string Seller { get; set; }
     }
 }
