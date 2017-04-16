@@ -81,7 +81,7 @@ GO
 
 
 SET IDENTITY_INSERT Beers ON
-INSERT INTO Beers (Id,Name,Price,Quantity,Rating,StyleId,BreweryId)
+INSERT INTO Beers (Id,Name,SalePrice,Quantity,Rating,StyleId,BreweryId)
 VALUES (1,'Pliny the Elder',4.20,28,9,2,1),
 		(2,'60 Minute Dogfish',5.30,22,9.5,2,2),
 		(3,'Bell’s Hopslam Ale',5,12,8.5,2,3),
