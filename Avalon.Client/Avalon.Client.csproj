@@ -83,11 +83,17 @@
     <Compile Include="EditBeerWin.xaml.cs">
       <DependentUpon>EditBeerWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditDistributor.xaml.cs">
+      <DependentUpon>EditDistributor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Register.xaml.cs">
       <DependentUpon>Register.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchBeerWin.xaml.cs">
       <DependentUpon>SearchBeerWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDistributorWin.xaml.cs">
+      <DependentUpon>SearchDistributorWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchEditBeerWin.xaml.cs">
       <DependentUpon>SearchEditBeerWin.xaml</DependentUpon>
@@ -123,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="EditDistributor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -147,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchBeerWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchDistributorWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

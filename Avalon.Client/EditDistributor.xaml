@@ -1,0 +1,59 @@
+﻿<Window x:Class="Avalon.Client.EditDistributor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Avalon.Client"
+        mc:Ignorable="d"
+        Title="AddDistributor" Height="500" Width="500"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen">
+
+    <!--<Window.Resources>
+        <DataTemplate x:Key="ListBoxItemTemplate" x:Name="ListBoxItemTemplate">
+
+            <WrapPanel>
+                <TextBlock Text="{Binding Mode=TwoWay}" VerticalAlignment="Center"/>
+            </WrapPanel>
+
+        </DataTemplate>
+
+    </Window.Resources>-->
+
+    <Grid>
+        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Label Content="Add Distributor" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,425" />
+        <Label Content="Company Name" Foreground="Turquoise"  FontSize="16" Margin="10,94,171,374"/>
+        <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,167,171,300"/>
+        <Label Content="Town" Foreground="Turquoise"  FontSize="16" Margin="10,131,171,338" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="Phone" Foreground="Turquoise"  FontSize="16" Margin="10,214,171,256" RenderTransformOrigin="0.5,0.5"/>
+        <Label Content="All breweries" Foreground="Turquoise"  FontSize="16" Margin="17,262,258,205" RenderTransformOrigin="0.5,0.5"/>
+        <Button Content="Cancel" Click="CancelButton_Click" Margin="340,455,10,7" Width="150"/>
+        <Button Content="Save" Click="SaveButton_Click" Margin="160,455,190,7" Width="150"/>
+        <TextBox Name="ClientNameTextBox" Margin="160,94,10,374" Text="{Binding Name}"/>
+        <ComboBox Name="cbTowns" Margin="160,131,10,338"  Text="Select Options" SelectionChanged="TownsComboBox_SelectionChanged"/>
+        <TextBox Name="AddressTextBox" Margin="160,167,10,300" Text="{Binding Address}"/>
+        <TextBox Name="PhoneTextBox" Margin="160,214,10,256" Text="{Binding Phone}"/>
+        <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,62,10,411"/>
+
+        <ListBox Margin="17,300,299,51" HorizontalAlignment="Stretch" Name="ListBoxAllBreweries" 
+                 VerticalAlignment="Stretch" MinWidth="150" Foreground="Turquoise"
+                 MinHeight="40" HorizontalContentAlignment="Left" 
+                 VerticalContentAlignment="Top" SelectionMode="Single" ItemsSource="{Binding AllBreweries}"/>
+        
+        <Label Content="Distributor's breweries" Foreground="Turquoise"  FontSize="16" Margin="307,262,10,205" RenderTransformOrigin="0.5,0.5"/>
+
+        <ListBox Margin="307,300,10,51" HorizontalAlignment="Stretch" Name="ListBoxDistributorBreweries" 
+            VerticalAlignment="Stretch" MinWidth="150" Foreground="Turquoise"
+            MinHeight="40" HorizontalContentAlignment="Left" 
+            VerticalContentAlignment="Top" SelectionMode="Single" ItemsSource="{Binding CheckedBreweries}"/>
+
+       
+        <Button Content="-->" Click="IncludeButton_Click" Margin="220,314,211,148" FontSize="24"/>
+        <Button Content="&lt;--" Click="ExcludeButton_Click" Margin="220,385,211,77" FontSize="24"/>
+
+
+    </Grid>
+
+</Window>

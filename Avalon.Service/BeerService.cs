@@ -214,6 +214,8 @@ namespace Avalon.Service
             }
         }
 
+       
+
         public static ObservableCollection<string> GetAllBreweriesNames()
         {
             using (AvalonContext context = new AvalonContext())

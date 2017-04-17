@@ -83,7 +83,9 @@ namespace Avalon.Client
                     // do something ...
                     break;
                 case "SearchDistributor":
-                    // do something ...
+                    SearchDistributorWin searchDistributorWin = new SearchDistributorWin();
+                    this.Close();
+                    searchDistributorWin.Show();
                     break;
                 case "AboutApp":
                     // do something ...
