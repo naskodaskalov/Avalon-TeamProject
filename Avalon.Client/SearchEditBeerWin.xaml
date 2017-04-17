@@ -57,7 +57,7 @@
         <Grid>
             <DataGrid Name="beersDatagrid" AutoGenerateColumns="False" ItemsSource="{Binding}" CanUserAddRows="False" 
                       CanUserReorderColumns="False" CanUserResizeColumns="True" CanUserResizeRows="False" 
-                      SelectionUnit="FullRow" SelectionMode="Single" Margin="35,80,0,77.4" Width="540"
+                      SelectionUnit="FullRow" SelectionMode="Single" Margin="48,82,12,77" Width="540"
                       RowBackground="Black">
                 <DataGrid.CellStyle>
                     <Style>

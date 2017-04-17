@@ -58,10 +58,20 @@ namespace Avalon.Client
             Dictionary<string, int> beersQuantity = new Dictionary<string, int>();
             foreach (var beer in _soldBeers)
             {
-                beersQuantity.Add(beer.Name, beer.Quantity);
+                if(beer.Quantity > 0)
+                {
+                    beersQuantity.Add(beer.Name, beer.Quantity);
+                }
             }
-            BeerService.AddSale(beersQuantity, customerName);
 
+            if(beersQuantity.Count == 0)
+            {
+                WarningLabel.Visibility = Visibility.Visible;
+                WarningLabel.Content = "There isn't enough quantity for sale.";
+                return;
+            }
+
+            BeerService.AddSale(beersQuantity, customerName);
             this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();

@@ -67,13 +67,13 @@ namespace Avalon.Client
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             string beerName = this.BeerName.Text;
-            decimal price = decimal.Parse(this.BeerPrice.Text);
-            int quantity = int.Parse(this.Quantity.Text);
-            float rating = float.Parse(this.BeerRating.Text);
+            var price = decimal.Parse(this.BeerPrice.Text);
+            var quantity = int.Parse(this.Quantity.Text);
+            var rating = float.Parse(this.BeerRating.Text);
             string style = this.cbStyles.SelectedItem.ToString();
             string breweryName = this.cbBreweries.SelectedItem.ToString();
             string distributorName = this.cbDistributors.SelectedItem.ToString();
-            decimal distributorPrice = decimal.Parse(this.DistributorPrice.Text);
+            var distributorPrice = decimal.Parse(this.DistributorPrice.Text);
 
             if (beerName == string.Empty || price <= 0 ||
                 quantity <= 0 || rating <= 0 || rating > 10 || 

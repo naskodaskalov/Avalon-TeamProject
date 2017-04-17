@@ -1,18 +1,6 @@
 ﻿using Avalon.Models;
 using Avalon.Service;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avalon.Client
 {
@@ -35,10 +23,11 @@ namespace Avalon.Client
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            AddSaleWin.AddBeerToSaleList(this.beersDatagrid.SelectedItem as Beer);
-
-            this.Close();
-            
+            if(this.beersDatagrid.SelectedItem != null)
+            {
+                AddSaleWin.AddBeerToSaleList(this.beersDatagrid.SelectedItem as Beer);
+                this.Close();
+            }
         }
 
         private void SearchButton_Click(object sender, RoutedEventArgs e)
@@ -58,8 +47,6 @@ namespace Avalon.Client
             //    WarningLabel.Content = "There aren't any beers with this name.";
             //    return;
             //}
-
-            int beerCount = BeerService.BeerCount(beerName);
 
             beersDatagrid.DataContext = BeerService.GetBeersByName(beerName);
 

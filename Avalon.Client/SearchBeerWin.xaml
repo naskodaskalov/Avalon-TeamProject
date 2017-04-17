@@ -73,15 +73,8 @@
                     <DataGridTextColumn Header="Price" Binding="{Binding SalePrice}" Width="130"/>
                     <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="130"/>
                     <DataGridTextColumn Header="Rating" Binding="{Binding Rating}" Width="130"/>
-
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-
-
-
-
-
-
     </Grid>
 </Window>

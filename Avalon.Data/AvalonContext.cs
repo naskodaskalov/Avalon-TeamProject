@@ -10,7 +10,7 @@ namespace Avalon.Data
         public AvalonContext()
             : base("name=AvalonContext")
         {
-            //this initializes the database with test data ... uncomment only if you need it 
+            //this initializes the database with test data ... uncomment only if you need it
             //Database.SetInitializer(new DropCreateDatabaseAlways<AvalonContext>());
             //Database.SetInitializer<AvalonContext>(new AvalonContextInitializer());
         }
