@@ -24,68 +24,73 @@ namespace Avalon.Client
         public AddBeer()
         {
             InitializeComponent();
-            //AddTownsToComboBox();
-            //AddStylesToComboBox();
+            AddBreweriesToComboBox();
+            AddStylesToComboBox();
+            AddDistributorsToComboBox();
 
         }
 
-        //private void AddStylesToComboBox()
-        //{
-        //    ObservableCollection<string> stylesList = new ObservableCollection<string>();
-        //    stylesList = BeerService.GetAllBeerStyles();
-        //    cbStyles.SelectedIndex = 0;
-        //    this.cbStyles.ItemsSource = stylesList;
-        //}
+        private void AddDistributorsToComboBox()
+        {
+            ObservableCollection<string> distributors = new ObservableCollection<string>();
+            distributors = BeerService.GetAllDistributors();
+            this.cbDistributors.SelectedIndex = 0;
+            this.cbDistributors.ItemsSource = distributors;
+
+        }
+
+        private void AddBreweriesToComboBox()
+        {
+            ObservableCollection<string> breweries = new ObservableCollection<string>();
+            breweries = BeerService.GetAllBreweriesNames();
+            this.cbBreweries.SelectedIndex = 0;
+            this.cbBreweries.ItemsSource = breweries;
+
+        }
+
+        private void AddStylesToComboBox()
+        {
+            ObservableCollection<string> stylesList = new ObservableCollection<string>();
+            stylesList = BeerService.GetAllBeerStyles();
+            cbStyles.SelectedIndex = 0;
+            this.cbStyles.ItemsSource = stylesList;
+        }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
             MainWindow mainWindow = new MainWindow();
+            this.Close();
             mainWindow.Show();
         }
 
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //string beerName = BeerName.Text;
-            //string price = BeerPrice.Text;
-            //string quantity = Quantity.Text;
-            //string rating = BeerRating.Text;
+            string beerName = this.BeerName.Text;
+            decimal price = decimal.Parse(this.BeerPrice.Text);
+            int quantity = int.Parse(this.Quantity.Text);
+            float rating = float.Parse(this.BeerRating.Text);
+            string style = this.cbStyles.SelectedItem.ToString();
+            string breweryName = this.cbBreweries.SelectedItem.ToString();
+            string distributorName = this.cbDistributors.SelectedItem.ToString();
+            decimal distributorPrice = decimal.Parse(this.DistributorPrice.Text);
 
-            //if (beerName == string.Empty || price == string.Empty ||
-            //    quantity == string.Empty || rating == string.Empty)
-            //{
-            //    WarningLabel.Content = "All field are required!";
-            //    WarningLabel.Visibility = Visibility.Visible;
-            //}
-            //else
-            //{
-            //    BeerService.AddBeers();
-            //    this.Close();
-            //    MainWindow mainWindow = new MainWindow();
-            //    mainWindow.Show();
-            //}
+            if (beerName == string.Empty || price <= 0 ||
+                quantity <= 0 || rating <= 0 || rating > 10 || 
+                style == string.Empty || breweryName == string.Empty || 
+                distributorName == string.Empty || distributorPrice <= 0)
+            {
+                WarningLabel.Content = "All field are required!";
+                WarningLabel.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                BeerService.AddBeer(beerName, price, quantity, rating, style, breweryName, distributorName, distributorPrice);
+                MainWindow mainWindow = new MainWindow();
+                this.Close();
+                mainWindow.Show();
+            }
         }
-        //private void AddTownsToComboBox()
-        //{
-        //    ObservableCollection<string> townList = new ObservableCollection<string>();
-        //    townList = AddressService.GetAllTowns();
-        //    cbTowns.SelectedIndex = 0;
-        //    townList.Add("Add New Town...");
-        //    this.cbTowns.ItemsSource = townList;
-        //}
-
-        //private void cbTowns_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    var item = cbTowns.SelectedItem.ToString();
-
-        //    if (item == "Add New Town...")
-        //    {
-        //        AddTown addTownWindow = new AddTown();
-        //        addTownWindow.Show();
-        //    }
-        //}
-
         private void Quantity_TextChanged(object sender, TextChangedEventArgs e)
         {
 

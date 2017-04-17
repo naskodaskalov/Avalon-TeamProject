@@ -223,6 +223,7 @@ namespace Avalon.Service
                 var breweries = context.Breweries.OrderBy(b => b.Name).Select(b => b.Name).ToList();
 
                 ObservableCollection<string> result = new ObservableCollection<string>();
+                result.Add("Select brewery");
                 foreach (var brew in breweries)
                 {
                    
@@ -322,46 +323,31 @@ namespace Avalon.Service
             }
         }
 
+       
 
-
-        // Add Beers to Brewery
-        //public static void AddBeers(string breweryName, string beerName, string beersCountStr)
-        //{
-        //    using(var context = new AvalonContext())
-        //    {
-        //        var brewery = context.Breweries.FirstOrDefault(x => x.Name == breweryName);
-        //        var beer = context.Beers.FirstOrDefault(x => x.Name == beerName);
-        //        int beersCount;
-        //        var beersList = new List<Beer>();
-
-        //        if(brewery == null)
-        //        {
-        //            Console.WriteLine("Invalid brewery.");
-        //            return;
-        //        }
-
-        //        if(beer == null)
-        //        {
-        //            Console.WriteLine("Invalid beer name.");
-        //            return;
-        //        }
-
-        //        if(!int.TryParse(beersCountStr, out beersCount))
-        //        {
-        //            Console.WriteLine("Beers count isn't number!");
-        //            return;
-        //        }
-
-        //        for (int i = 0; i < beersCount; i++)
-        //        {
-        //            beersList.Add(beer);
-        //        }
-
-        //        context.Breweries.FirstOrDefault(x => x.Name == breweryName).Beers.ToList().AddRange(beersList);
-        //        context.Beers.AddRange(beersList);
-        //        context.SaveChanges();
-        //    }
-        //}
+        public static void AddBeer(string beerName, decimal salePrice, int quantity, float rating, string styleName, string breweryName, string distributorName, decimal distributorPrice)
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                Style style = context.Styles.FirstOrDefault(s => s.Name.ToLower() == styleName.ToLower());
+                Brewery brewery = context.Breweries.FirstOrDefault(b => b.Name.ToLower() == breweryName.ToLower());
+                Distributor distrbutor = context.Distributors.FirstOrDefault(d => d.Name.ToLower() == distributorName.ToLower());
+                Beer beer = new Beer
+                {
+                    Name = beerName,
+                    SalePrice = salePrice,
+                    Quantity = quantity,
+                    Rating = rating,
+                    Style = style,
+                    Brewery = brewery,
+                    Distributor = distrbutor,
+                    DistributorPrice = distributorPrice
+                };
+                context.Beers.Add(beer);
+                context.SaveChanges();
+                
+            }
+        }
 
         public static ObservableCollection<Beer> GetAllBeers()
         {
@@ -414,6 +400,22 @@ namespace Avalon.Service
                 foreach (var beer in beers)
                 {
                     result.Add(beer);
+                }
+                return result;
+            }
+        }
+
+        public static ObservableCollection<string> GetAllDistributors()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var distributorNames = context.Distributors.OrderBy(d => d.Name).Select(d => d.Name);
+
+                var result = new ObservableCollection<string>();
+                result.Add("Select distributor");
+                foreach (var distributor in distributorNames)
+                {
+                    result.Add(distributor);
                 }
                 return result;
             }

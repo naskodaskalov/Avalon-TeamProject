@@ -5,23 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Add new beer" Height="500" Width="300"
+        Title="Add new beer" Height="500" Width="330"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid>
         <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
-        <Label Content="Add Beer-not ready" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,0,425" />
+        <Label Content="Add New Beer" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,0,425" />
         <Label Content="Name" Foreground="Turquoise"  FontSize="16" Margin="10,94,171,374"/>
-        <TextBox Name="BeerName" Margin="129,94,10,374"/>
-        <Label Content="Price" Foreground="Turquoise"  FontSize="16" Margin="10,131,171,338" RenderTransformOrigin="0.5,0.5"/>
-        <TextBox Name="BeerPrice" Margin="129,132,10,335"/>
+        <TextBox Name="BeerName" Margin="144,94,9.6,374"/>
+        <Label Content="Sale Price" Foreground="Turquoise"  FontSize="16" Margin="10,131,171,338" RenderTransformOrigin="0.5,0.5"/>
+        <TextBox Name="BeerPrice" Margin="144,132,9.6,338"/>
         <Label Content="Quantity" Foreground="Turquoise"  FontSize="16" Margin="10,167,171,300"/>
-        <TextBox Name="Quantity" Margin="129,168,10,299" TextChanged="Quantity_TextChanged"/>
-        <Label Content="Rating" Foreground="Turquoise"  FontSize="16" Margin="10,205,171,264"/>
-        <TextBox Name="BeerRating" Margin="129,205,10,264"/>
+        <TextBox Name="Quantity" Margin="144,168,9.6,300" TextChanged="Quantity_TextChanged"/>
+        <Label Content="Rating (0-10)" Foreground="Turquoise"  FontSize="16" Margin="10,205,171,264"/>
+        <TextBox Name="BeerRating" Margin="144,205,9.6,264"/>
         <Button Content="Cancel" Click="btnCancel_Click" Margin="218,452,10,10"/>
         <Button Content="Add" Click="btnAdd_Click" Margin="144,452,92,10"/>
         <Label Name="WarningLabel" Foreground="Red" FontSize="14" HorizontalAlignment="Center" Visibility="Hidden" Margin="10,62,10,411"/>
+        <ComboBox Name="cbStyles"  Margin="144,241,9.6,229"/>
+        <Label Content="Style" Foreground="Turquoise"  FontSize="16" Margin="10,241,171,229"/>
+        <ComboBox Name="cbBreweries"  Margin="144,276,9.6,194"/>
+        <Label Content="Brewery" Foreground="Turquoise"  FontSize="16" Margin="10,276,171,194"/>
+        <ComboBox Name="cbDistributors"  Margin="144,311,9.6,159"/>
+        <Label Content="Distributor" Foreground="Turquoise"  FontSize="16" Margin="10,311,171,159"/>
+        <Label Content="Distributor Price" Foreground="Turquoise"  FontSize="16" Margin="10,346,171,122"/>
+        <TextBox Name="DistributorPrice" Margin="144,346,9.6,122"/>
     </Grid>
 </Window>
