@@ -68,6 +68,12 @@ namespace Avalon.Client
             }
             else
             {
+                if (!AddressService.IsZipCodeValid(zipCode))
+                {
+                    WarningLabel.Visibility = Visibility.Visible;
+                    WarningLabel.Content = "Invalid zip code, must contains only numbers!";
+                    return;
+                }
                 AddressService.AddTown(townName, zipCode, country, continent);
                 this.Close();
             }

@@ -2,7 +2,6 @@ namespace Avalon.Data
 {
     using Models;
     using System.Data.Entity;
-    using System.IO;
 
     public class AvalonContext : DbContext
     {

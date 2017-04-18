@@ -53,8 +53,7 @@ namespace Avalon.Client
             string phone = PhoneTextBox.Text;
             string style = cbStyles.SelectedItem.ToString();
 
-            if (clientName == string.Empty || town == "Select towns" || 
-                style == "Select styles" || address == string.Empty ||
+            if (clientName == string.Empty || town == "Select towns" || address == string.Empty ||
                 email == string.Empty || phone == string.Empty)
             {
                 WarningLabel.Content = "All field are required!";

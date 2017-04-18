@@ -1,19 +1,9 @@
 ﻿using Avalon.Models;
 using Avalon.Service;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avalon.Client
 {
@@ -30,8 +20,6 @@ namespace Avalon.Client
             AddStylesToComboBox();
             AddDistributorsToComboBox();
             AddBreweriesToComboBox();
-
-
         }
 
         public EditBeerWin(Beer beerforEditing)
@@ -49,7 +37,8 @@ namespace Avalon.Client
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-
+            SearchEditBeerWin searchEditBeerWin = new SearchEditBeerWin();
+            searchEditBeerWin.Show();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -74,7 +63,8 @@ namespace Avalon.Client
 
             BeerService.UpdateBeer(beerToUpdate, newStyle, newDistributor, newBrewery);
             this.Close();
-
+            SearchEditBeerWin searchEditBeerWin = new SearchEditBeerWin();
+            searchEditBeerWin.Show();
         }
 
         private void cbStyles_SelectionChanged(object sender, SelectionChangedEventArgs e)

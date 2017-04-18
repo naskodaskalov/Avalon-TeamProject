@@ -67,7 +67,7 @@ namespace Avalon.Client
             if(beersQuantity.Count == 0)
             {
                 WarningLabel.Visibility = Visibility.Visible;
-                WarningLabel.Content = "There isn't enough quantity for sale.";
+                WarningLabel.Content = "There isn't selected beers or enough beer quantity for sale.";
                 return;
             }
 

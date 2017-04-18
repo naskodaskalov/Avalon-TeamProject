@@ -37,6 +37,19 @@ namespace Avalon.Service
             }
         }
 
+        public static bool IsZipCodeValid(string zipcode)
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                int zipCodeInt;
+                if (!int.TryParse(zipcode, out zipCodeInt))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public static void AddTown(string name, string zipcode, string countryName, string continent)
         {
             using (AvalonContext context = new AvalonContext())
@@ -45,10 +58,14 @@ namespace Avalon.Service
 
                 if (country == null)
                 {
-                    country.Name = name;
-                    country.Continent = continent;
+                    country = new Country
+                    {
+                        Name = name,
+                        Continent = continent
+                    };
+                    context.Countries.Add(country);
+                    context.SaveChanges();
                 }
-
                 Town town = new Town
                 {
                     Name = name,
