@@ -14,15 +14,11 @@
         <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill"  />
 
         <StackPanel>
-            
-            
-        <!--Top menu -->
-            <StackPanel Background="Bisque">
-                <TextBlock Text="Avalon's Beers Platform" FontSize="15" FontWeight="Bold" Padding="10"/>
-            </StackPanel>
 
+
+            <!--Top menu -->
             <StackPanel >
-                <Menu Width="Auto" Height="28"  >
+                <Menu Width="Auto" Height="30"  >
                     <MenuItem Header="Add" FontSize="20" >
                         <MenuItem x:Name="AddClient" Header="Add Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
                         <MenuItem x:Name="AddDistributor" Header="Add Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
@@ -76,7 +72,7 @@
 
         </StackPanel>
 
-        <Button Content="X" Margin="0,0,0,181" Name="btnClose" Click="btnClose_Click" Height="19" VerticalAlignment="Top" HorizontalAlignment="Right" Width="19" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Black" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
+        <Button Content="X" Name="btnClose" Click="btnClose_Click" Height="13" VerticalAlignment="Top" HorizontalAlignment="Right" Width="0" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Turquoise" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
 
     </Grid>
 

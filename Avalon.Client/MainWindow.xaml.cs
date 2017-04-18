@@ -47,6 +47,7 @@ namespace Avalon.Client
                     addDistributorWin.Show();
                     break;
                 case "AddBeerBtn":
+                case "AddBeer":
                     this.Hide();
                     AddBeer addBeerWin = new AddBeer();
                     addBeerWin.Show(); 
