@@ -26,8 +26,9 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Name ="PrintButton"  Content="PrintSale" Margin="0,0,10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="76"/>
-        <Button Name ="BackButton"  Content="Back" Margin="0,0,92,20" Click="BackButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="69"/>
+        <Button Name ="PrintButton" Click="PrintButton_Click" Content="Print Sale" Margin="0,0,10,20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="109"/>
+        <Button Name ="BackButton"  Content="Back" Margin="0,0,124,20" Click="BackButton_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="37" Width="81"/>
+        <Label Name="WarningLabel" Foreground="Red" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontStyle="Italic" Visibility="Visible" Margin="10,317,278,20" Width="606" RenderTransformOrigin="0.5,0.5"/>
 
     </Grid>
 </Window>

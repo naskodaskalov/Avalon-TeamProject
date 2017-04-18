@@ -63,7 +63,7 @@
                     <Button x:Name="AddClientBtn" Content="Add Client" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
                     <Button x:Name="AddBeerBtn" Content="Add Beer"  FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler" />
                     <Button x:Name="AddSaleBtn" Content="Add Sale" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
-                    <Button x:Name="ShowSaleBtn" Content="Show Sales" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
+                    <Button x:Name="ShowSaleBtn" Content="Sales History" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
 
                 </StackPanel>
 
