@@ -88,7 +88,8 @@ namespace Avalon.Client
                     searchDistributorWin.Show();
                     break;
                 case "AboutApp":
-                    // do something ...
+                    About abautWindow = new About();
+                    abautWindow.Show();
                     break;
                 case "ExitApp":
                     // do something ...
