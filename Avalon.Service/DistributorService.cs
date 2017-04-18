@@ -67,48 +67,36 @@ namespace Avalon.Service
 
             using (AvalonContext context = new AvalonContext())
             {
-                var distributorToDelete = context.Distributors.Where(b => b.Name == distributorName).FirstOrDefault();
+                Distributor distributorToDelete = context.Distributors
+                    .FirstOrDefault(b => b.Name.ToLower() == distributorName.ToLower());
+                distributorToDelete.Breweries.Clear();
+                distributorToDelete.Town = null;
+                distributorToDelete.Beers.Clear();
+
                 context.Distributors.Remove(distributorToDelete);
                 context.SaveChanges();
             }
         }
 
-        public static void UpdateDistributor(Distributor distributorToUpdate, string newTown, List<string> _checkedBreweries)
+        public static void UpdateDistributor(string distributorToUpdateName,string newName, string town,string phone,string address, List<string> breweries)
         {
             using (AvalonContext context = new AvalonContext())
             {
+                Town newTown = context.Towns.FirstOrDefault(t => t.Name.ToLower() == town.ToLower());
 
-                context.Distributors.Attach(distributorToUpdate);
+                Distributor distributor = context.Distributors
+                    .FirstOrDefault(d => d.Name.ToLower() == distributorToUpdateName.ToLower());
+                distributor.Breweries.Clear();
+                distributor.Name = newName;
+                distributor.Town = newTown;
+                distributor.Phone = phone;
+                distributor.Address = address;
 
-                context.Entry(distributorToUpdate).Reference(o => o.Town).Load();
-                context.Entry(distributorToUpdate).Collection(o => o.Breweries).Load();
-
-
-                if (newTown != String.Empty)
+                foreach (var brew in breweries)
                 {
-                    Town town = context.Towns.Where(s => s.Name == newTown).FirstOrDefault();
-                    distributorToUpdate.Town = town;
-                    distributorToUpdate.TownId = town.Id;
+                    distributor.Breweries.Add(context.Breweries.FirstOrDefault(b => b.Name.ToLower() == brew.ToLower()));
                 }
-
-                if (_checkedBreweries.Count != 0)
-                {
-                    foreach (var item in context.Distributors.Where(d => d.Name == distributorToUpdate.Name).FirstOrDefault().Breweries.ToList())
-                    {
-                        distributorToUpdate.Breweries.Remove(item);
-                    }
-
-
-                    foreach (var br in _checkedBreweries)
-                    {
-                        var brewery = context.Breweries.Where(b => b.Name == br).FirstOrDefault();
-                        distributorToUpdate.Breweries.Add(brewery);
-
-                    }
-                    
-                }
-
-                context.Entry(distributorToUpdate).State = EntityState.Modified;
+                
                 context.SaveChanges();
             }
         }

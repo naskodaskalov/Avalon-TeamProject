@@ -27,6 +27,8 @@ namespace Avalon.Client
 
         private Distributor _distributorForEdit;
 
+        private string distributorNameForEdit;
+
         private ObservableCollection<string> _checkedBreweries;
 
         private ObservableCollection<string> _allBreweries;
@@ -61,6 +63,7 @@ namespace Avalon.Client
         {
             InitializeComponent();
             _distributorForEdit = distributor;
+            distributorNameForEdit = distributor.Name;
             this.DataContext = _distributorForEdit;
             CheckedBreweries = new ObservableCollection<string>();
             AllBreweries = new ObservableCollection<string>();
@@ -114,15 +117,24 @@ namespace Avalon.Client
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Distributor distributorToUpdate = this.DataContext as Distributor;
-            string newTown = String.Empty;
+            string distributorName = this.distributorNameForEdit;
+
+            string address = this.AddressTextBox.Text;
+            string town = this.cbTowns.SelectedItem.ToString();
+            string phone = this.PhoneTextBox.Text;
+            string newDestributorName = this.DistributorNameTextBox.Text;
 
 
-            if (this.cbTowns.SelectedItem != null)
+            if (address == string.Empty || town == string.Empty || 
+                phone == string.Empty || newDestributorName == string.Empty)
             {
-                newTown = this.cbTowns.SelectedItem.ToString();
+                WarningLabel.Content = "All field are required";
+                WarningLabel.Visibility = Visibility.Visible;
             }
-            DistributorService.UpdateDistributor(distributorToUpdate, newTown, CheckedBreweries.ToList());
+            else
+            {
+                DistributorService.UpdateDistributor(distributorName, newDestributorName, town, phone, address, _checkedBreweries.ToList());
+            }
             MainWindow mainWindow = new MainWindow();
             this.Close();
             mainWindow.Show();

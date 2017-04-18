@@ -17,7 +17,10 @@ namespace Avalon.Client
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow mainWindow = new MainWindow();
             this.Close();
+            mainWindow.Show();
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

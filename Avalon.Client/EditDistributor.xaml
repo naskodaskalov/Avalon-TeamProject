@@ -23,7 +23,7 @@
 
     <Grid>
         <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
-        <Label Content="Add Distributor" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,425" />
+        <Label Content="Edit Distributor" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,425" />
         <Label Content="Company Name" Foreground="Turquoise"  FontSize="16" Margin="10,94,171,374"/>
         <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,167,171,300"/>
         <Label Content="Town" Foreground="Turquoise"  FontSize="16" Margin="10,131,171,338" RenderTransformOrigin="0.5,0.5"/>
@@ -31,7 +31,7 @@
         <Label Content="All breweries" Foreground="Turquoise"  FontSize="16" Margin="17,262,258,205" RenderTransformOrigin="0.5,0.5"/>
         <Button Content="Cancel" Click="CancelButton_Click" Margin="340,455,10,7" Width="150"/>
         <Button Content="Save" Click="SaveButton_Click" Margin="160,455,190,7" Width="150"/>
-        <TextBox Name="ClientNameTextBox" Margin="160,94,10,374" Text="{Binding Name}"/>
+        <TextBox Name="DistributorNameTextBox" Margin="160,94,10,374" Text="{Binding Name}"/>
         <ComboBox Name="cbTowns" Margin="160,131,10,338"  Text="Select Options" SelectionChanged="TownsComboBox_SelectionChanged"/>
         <TextBox Name="AddressTextBox" Margin="160,167,10,300" Text="{Binding Address}"/>
         <TextBox Name="PhoneTextBox" Margin="160,214,10,256" Text="{Binding Phone}"/>
