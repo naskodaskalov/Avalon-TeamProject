@@ -1,18 +1,8 @@
 ﻿using Avalon.Service;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Avalon.Client
 {
@@ -59,36 +49,41 @@ namespace Avalon.Client
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
         }
 
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            string beerName = this.BeerName.Text;
-            var price = decimal.Parse(this.BeerPrice.Text);
-            var quantity = int.Parse(this.Quantity.Text);
-            var rating = float.Parse(this.BeerRating.Text);
-            string style = this.cbStyles.SelectedItem.ToString();
-            string breweryName = this.cbBreweries.SelectedItem.ToString();
-            string distributorName = this.cbDistributors.SelectedItem.ToString();
-            var distributorPrice = decimal.Parse(this.DistributorPrice.Text);
+            try
+            {
+                string beerName = this.BeerName.Text;
+                var price = decimal.Parse(this.BeerPrice.Text);
+                var quantity = int.Parse(this.Quantity.Text);
+                var rating = float.Parse(this.BeerRating.Text);
+                string style = this.cbStyles.SelectedItem.ToString();
+                string breweryName = this.cbBreweries.SelectedItem.ToString();
+                string distributorName = this.cbDistributors.SelectedItem.ToString();
+                var distributorPrice = decimal.Parse(this.DistributorPrice.Text);
 
-            if (beerName == string.Empty || price <= 0 ||
-                quantity <= 0 || rating <= 0 || rating > 10 || 
-                style == string.Empty || breweryName == string.Empty || 
-                distributorName == string.Empty || distributorPrice <= 0)
-            {
-                WarningLabel.Content = "All field are required!";
-                WarningLabel.Visibility = Visibility.Visible;
+                if (beerName == string.Empty || price <= 0 ||
+                    quantity <= 0 || rating <= 0 || rating > 10 ||
+                    style == string.Empty || breweryName == string.Empty ||
+                    distributorName == string.Empty || distributorPrice <= 0)
+                {
+                    WarningLabel.Content = "All field are required!";
+                    WarningLabel.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    BeerService.AddBeer(beerName, price, quantity, rating, style, breweryName, distributorName, distributorPrice);
+                    this.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                BeerService.AddBeer(beerName, price, quantity, rating, style, breweryName, distributorName, distributorPrice);
-                this.Close();
-                //MainWindow mainWindow = new MainWindow();
-                //mainWindow.Show();
+                WarningLabel.Visibility = Visibility.Visible;
+                WarningLabel.Content = ex.Message;
+                return;
             }
         }
         private void Quantity_TextChanged(object sender, TextChangedEventArgs e)
