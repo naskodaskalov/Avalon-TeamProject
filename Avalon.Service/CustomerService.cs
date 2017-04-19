@@ -3,6 +3,7 @@ using Avalon.Models;
 using Avalon.Models.GridModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 
 namespace Avalon.Service
@@ -30,16 +31,61 @@ namespace Avalon.Service
             }
         }
 
+        public static ObservableCollection<Customer> GetAllClients()
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var customers = context.Customers.ToList();
+
+                var result = new ObservableCollection<Customer>();
+                foreach (var c in customers)
+                {
+                    result.Add(c);
+                }
+                return result;
+            }
+        }
+
         public static List<string> GetAllCustomers()
         {
             using (AvalonContext context = new AvalonContext())
             {
-                var customers = context.Customers.OrderBy(b => b.Name).Select(c => c.Name).ToList();
+                return context.Customers.Select(x => x.Name).ToList();
+            }
+        }
 
-                var result = new List<string>();
-                foreach (var c in customers)
+        public static void UpdateClient(Customer client)
+        {
+            using(var db = new AvalonContext())
+            {
+                db.Entry(client).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+        }
+
+        public static void DeleteClient(string clientName)
+        {
+            using(var db = new AvalonContext())
+            {
+                var client = db.Customers.FirstOrDefault(x => x.Name == clientName);
+                if(client != null)
                 {
-                    result.Add(c);
+                    db.Customers.Remove(client);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public static ObservableCollection<Customer> GetCustomersByName(string name)
+        {
+            using (AvalonContext context = new AvalonContext())
+            {
+                var clients = context.Customers.ToList();
+
+                var result = new ObservableCollection<Customer>();
+                foreach (var client in clients)
+                {
+                    result.Add(client);
                 }
                 return result;
             }

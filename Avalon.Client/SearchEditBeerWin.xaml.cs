@@ -13,14 +13,11 @@ namespace Avalon.Client
         {
             InitializeComponent();
             beersDatagrid.DataContext = BeerService.GetAllBeers();
-
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            //MainWindow mainWindow = new MainWindow();
-            //mainWindow.Show();
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
