@@ -62,16 +62,16 @@ namespace Avalon.Client
             {
                 FileStream fs = new FileStream("..\\..\\ExportPdf" + "\\" + $"SaleId {export.SaleId} PDF Document.pdf", FileMode.Create);
 
-                Document document = new Document(PageSize.A5);
+                Document document = new Document(PageSize.A6);
                 PdfWriter writer = PdfWriter.GetInstance(document, fs);
                 document.Open();
                 document.AddHeader("Date of sale", export.Date.ToString());
                 document.AddAuthor(export.Seller);
 
                 PdfContentByte cb = writer.DirectContent;
-                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("..\\..\\Images\\cap.jpg");
+                iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("..\\..\\Images\\avalon-mark.png");
                 img.SetAbsolutePosition(180,30);
-                img.ScalePercent(10);
+                img.ScalePercent(40);
                 cb.AddImage(img);
 
                 Font calibri = new Font(Font.FontFamily.COURIER, 14, Font.ITALIC);  
