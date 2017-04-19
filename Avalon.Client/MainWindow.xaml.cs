@@ -37,41 +37,40 @@ namespace Avalon.Client
             {
                 case "AddClient":
                 case "AddClientBtn":
-                    this.Hide();
                     AddClient addClientWin = new AddClient();
-                    addClientWin.Show();
+                    addClientWin.ShowDialog();
                     break;
                 case "AddDistributor":
-                    this.Hide();
+                    //this.Hide();
                     AddDistributorWindow addDistributorWin = new AddDistributorWindow();
-                    addDistributorWin.Show();
+                    addDistributorWin.ShowDialog();
                     break;
                 case "AddBeerBtn":
                 case "AddBeer":
-                    this.Hide();
+                    //this.Hide();
                     AddBeer addBeerWin = new AddBeer();
-                    addBeerWin.Show(); 
+                    addBeerWin.ShowDialog(); 
                     break;
                 case "AddBrewery":
-                    this.Hide();
+                    //this.Hide();
                     AddBreweryWin addBreweryWin = new AddBreweryWin();
-                    addBreweryWin.Show(); 
+                    addBreweryWin.ShowDialog(); 
                     break;
                 case "AddSale":
                 case "AddSaleBtn":
-                    this.Hide();
+                    //this.Hide();
                     AddSaleWin addSaleWin = new AddSaleWin();
-                    addSaleWin.Show();
+                    addSaleWin.ShowDialog();
                     break;
                 case "SearchBeer":
-                    this.Hide();
+                    //this.Hide();
                     SearchBeerWin searchBeerWindow = new SearchBeerWin();
-                    searchBeerWindow.Show();
+                    searchBeerWindow.ShowDialog();
                     break;
                 case "SearchBeerBtn":
-                    this.Hide();
+                    //this.Hide();
                     SearchEditBeerWin searchEditBeerWindow = new SearchEditBeerWin();
-                    searchEditBeerWindow.Show();
+                    searchEditBeerWindow.ShowDialog();
                     break;
                 case "SearchClient":
                 case "SearchClientBtn":
@@ -84,13 +83,13 @@ namespace Avalon.Client
                     // do something ...
                     break;
                 case "SearchDistributor":
+                    //this.Close();
                     SearchDistributorWin searchDistributorWin = new SearchDistributorWin();
-                    this.Close();
-                    searchDistributorWin.Show();
+                    searchDistributorWin.ShowDialog();
                     break;
                 case "AboutApp":
                     About abautWindow = new About();
-                    abautWindow.Show();
+                    abautWindow.ShowDialog();
                     break;
                 case "ExitApp":
                     // do something ...
@@ -98,9 +97,9 @@ namespace Avalon.Client
                     break;
                 case "ShowSaleBtn":
                 case "ShowSale":
+                    //this.Close();
                     ShowSales showSalesWindow = new ShowSales();
-                    this.Close();
-                    showSalesWindow.Show();
+                    showSalesWindow.ShowDialog();
                     break;
             }
             e.Handled = true;

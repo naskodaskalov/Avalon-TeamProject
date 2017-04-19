@@ -10,11 +10,13 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="301*"/>
             <RowDefinition Height="199*"/>
         </Grid.RowDefinitions>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" Grid.RowSpan="2" />
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" Grid.RowSpan="2"/>
+        
         <Label Content="Edit Beer" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,0,226.4" />
 
         <Label Content="Name" Foreground="Turquoise"  FontSize="16" Margin="10,72,271,197.4"/>

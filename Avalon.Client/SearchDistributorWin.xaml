@@ -41,7 +41,11 @@
     </Window.Resources>
 
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Search Distributor:" Foreground="Turquoise" FontWeight="Bold" FontSize="20" Margin="10,10,374,288.4" />
 
         <Button Content="Cancel" Click="CancelButton_Click" Margin="443,300,29,20.4"/>

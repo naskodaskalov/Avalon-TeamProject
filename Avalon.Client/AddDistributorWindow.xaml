@@ -23,7 +23,11 @@
     </Window.Resources>
 
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Add Distributor" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,425" />
         <Label Content="Company Name" Foreground="Turquoise"  FontSize="16" Margin="10,94,171,374"/>
         <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,167,171,300"/>

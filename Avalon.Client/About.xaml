@@ -10,7 +10,11 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid Background="Black">
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Opacity="0.6" Stretch="UniformToFill" />
+        </Border>
         <Label Name="ProjectName" Content="Avalon SoftUni Project" Foreground="Turquoise" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" Margin="0,0,0,245"/>
         <Label Name="Info" Content="Beer store software v1.0" FontSize="24" Foreground="Turquoise" Margin="10,167,10,288" HorizontalContentAlignment="Center"/>
         <Label Name="Info2" Content="Copyright © 2017. All rights reserved." FontSize="22" Foreground="Turquoise" Margin="10,217,10,240" HorizontalContentAlignment="Center"/>

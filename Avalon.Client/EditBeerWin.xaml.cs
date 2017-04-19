@@ -38,7 +38,7 @@ namespace Avalon.Client
         {
             this.Close();
             SearchEditBeerWin searchEditBeerWin = new SearchEditBeerWin();
-            searchEditBeerWin.Show();
+            searchEditBeerWin.ShowDialog();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -64,7 +64,7 @@ namespace Avalon.Client
             BeerService.UpdateBeer(beerToUpdate, newStyle, newDistributor, newBrewery);
             this.Close();
             SearchEditBeerWin searchEditBeerWin = new SearchEditBeerWin();
-            searchEditBeerWin.Show();
+            searchEditBeerWin.ShowDialog();
         }
 
         private void cbStyles_SelectionChanged(object sender, SelectionChangedEventArgs e)

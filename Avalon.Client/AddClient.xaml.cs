@@ -40,8 +40,8 @@ namespace Avalon.Client
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -63,8 +63,8 @@ namespace Avalon.Client
             {
                 CustomerService.AddCustomer(clientName, address, town, email, phone, style);
                 this.Close();
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
+                //MainWindow mainWindow = new MainWindow();
+                //mainWindow.Show();
             }
         }
         private void AddTownsToComboBox()
@@ -83,7 +83,7 @@ namespace Avalon.Client
             if (item == "Add New Town...")
             {
                 AddTown addTownWindow = new AddTown();
-                addTownWindow.Show();
+                addTownWindow.ShowDialog();
             }
         }
     }

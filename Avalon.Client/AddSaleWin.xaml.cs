@@ -48,8 +48,8 @@ namespace Avalon.Client
     private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -73,8 +73,8 @@ namespace Avalon.Client
 
             BeerService.AddSale(beersQuantity, customerName);
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void ClientsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,14 +84,14 @@ namespace Avalon.Client
             if (value == "Add New Customer...")
             {
                 AddClient addClientWindow = new AddClient();
-                addClientWindow.Show();
+                addClientWindow.ShowDialog();
             }
         }
 
         private void AddBeerToSale_Button_Click(object sender, RoutedEventArgs e)
         {
             SearchBeerWin searchBeerWin = new SearchBeerWin();
-            searchBeerWin.Show();
+            searchBeerWin.ShowDialog();
         }
 
         private static ObservableCollection<Beer> _soldBeers;

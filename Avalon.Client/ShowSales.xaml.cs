@@ -19,6 +19,8 @@ using iTextSharp;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using System.Diagnostics;
+using Avalon.Data;
 
 namespace Avalon.Client
 {
@@ -47,20 +49,20 @@ namespace Avalon.Client
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void PrintButton_Click(object sender, RoutedEventArgs e)
         {
-            SalesGrid export = this.ListViewSales.SelectedItem as SalesGrid;
+            SalesGrid export = this.ListViewSales.SelectedItem as SalesGrid;    
 
             if (export != null)
             {
                 FileStream fs = new FileStream("..\\..\\ExportPdf" + "\\" + $"SaleId {export.SaleId} PDF Document.pdf", FileMode.Create);
 
-                Document document = new Document(PageSize.SMALL_PAPERBACK);
+                Document document = new Document(PageSize.A5);
                 PdfWriter writer = PdfWriter.GetInstance(document, fs);
                 document.Open();
                 document.AddHeader("Date of sale", export.Date.ToString());
@@ -69,10 +71,10 @@ namespace Avalon.Client
                 PdfContentByte cb = writer.DirectContent;
                 iTextSharp.text.Image img = iTextSharp.text.Image.GetInstance("..\\..\\Images\\cap.jpg");
                 img.SetAbsolutePosition(180,30);
-                img.ScalePercent(12);
+                img.ScalePercent(10);
                 cb.AddImage(img);
 
-                Font calibri = new Font(Font.FontFamily.COURIER, 18, Font.ITALIC);
+                Font calibri = new Font(Font.FontFamily.COURIER, 14, Font.ITALIC);  
 
                 iTextSharp.text.Paragraph p1 = new iTextSharp.text.Paragraph($"Data of sale: {export.Date.ToString()}",calibri);
                 iTextSharp.text.Paragraph p2 = new iTextSharp.text.Paragraph($"Customer: {export.Customer}", calibri);
@@ -96,6 +98,8 @@ namespace Avalon.Client
 
                 this.WarningLabel.Content = $"Sale with id {export.SaleId} succesfully exported.";
                 this.WarningLabel.Visibility = Visibility.Visible;
+                ProcessStartInfo startInfo = new ProcessStartInfo("..\\..\\ExportPdf" + "\\" + $"SaleId {export.SaleId} PDF Document.pdf");
+                Process.Start(startInfo);
             }
             else
             {

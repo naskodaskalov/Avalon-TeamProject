@@ -58,9 +58,9 @@ namespace Avalon.Client
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
 
@@ -86,9 +86,9 @@ namespace Avalon.Client
             else
             {
                 BeerService.AddBeer(beerName, price, quantity, rating, style, breweryName, distributorName, distributorPrice);
-                MainWindow mainWindow = new MainWindow();
                 this.Close();
-                mainWindow.Show();
+                //MainWindow mainWindow = new MainWindow();
+                //mainWindow.Show();
             }
         }
         private void Quantity_TextChanged(object sender, TextChangedEventArgs e)

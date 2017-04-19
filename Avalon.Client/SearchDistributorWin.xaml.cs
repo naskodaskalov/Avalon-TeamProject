@@ -30,17 +30,17 @@ namespace Avalon.Client
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
 
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+            //this.Close();
             EditDistributor editDistributorWin = new EditDistributor(this.distributorsDatagrid.SelectedItem as Distributor);
-            this.Close();
-            editDistributorWin.Show();
+            editDistributorWin.ShowDialog();
 
 
         }

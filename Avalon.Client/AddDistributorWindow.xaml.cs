@@ -56,8 +56,8 @@ namespace Avalon.Client
             string chosenTown = this.cbTowns.SelectedItem.ToString();
             DistributorService.AddDistributor(newDistributor, chosenTown, _checkedBreweries);
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void TownsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,15 +67,15 @@ namespace Avalon.Client
             if (value == "Add New Town...")
             {
                 AddTown addTownWindow = new AddTown();
-                addTownWindow.Show();
+                addTownWindow.ShowDialog();
             }
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private List<string> _checkedBreweries;

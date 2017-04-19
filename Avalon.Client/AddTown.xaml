@@ -10,7 +10,11 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Add Town" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,236,232"/>
         <Label Content="Name" Foreground="Turquoise"  FontSize="16" Margin="10,73,236,191"/>
         <Label Content="ZIP Code" Foreground="Turquoise"  FontSize="16" Margin="10,109,236,154" RenderTransformOrigin="0.5,0.5"/>

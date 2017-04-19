@@ -11,8 +11,11 @@
         WindowStartupLocation="CenterScreen">
 
     <Grid Width="956" Height="582">
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill"  />
-
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <StackPanel>
 
 
@@ -72,8 +75,7 @@
 
         </StackPanel>
 
-        <Button Content="X" Name="btnClose" Click="btnClose_Click" Height="13" VerticalAlignment="Top" HorizontalAlignment="Right" Width="0" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Turquoise" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
-
+                <Button Content="X" Name="btnClose" Click="btnClose_Click" Height="13" VerticalAlignment="Top" HorizontalAlignment="Right" Width="0" Cursor="Hand" FontFamily="FontAwesome" Background="#00000000" Foreground="Turquoise" BorderBrush="Transparent" FontSize="14" FontWeight="Bold" RenderTransformOrigin="-2.292,-9.06"/>
     </Grid>
 
 

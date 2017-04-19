@@ -135,9 +135,9 @@ namespace Avalon.Client
             {
                 DistributorService.UpdateDistributor(distributorName, newDestributorName, town, phone, address, _checkedBreweries.ToList());
             }
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void TownsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -153,9 +153,9 @@ namespace Avalon.Client
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
             this.Close();
-            mainWindow.Show();
+            //MainWindow mainWindow = new MainWindow();
+            //mainWindow.Show();
         }
 
         private void IncludeButton_Click(object sender, RoutedEventArgs e)

@@ -23,7 +23,11 @@
     </Window.Resources>
 
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Add Brewery" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,678.4" />
         <Label Content="Brewery Name" Foreground="Turquoise"  FontSize="16" Margin="10,89,369,624.4"/>
         <Label Content="Address" Foreground="Turquoise"  FontSize="16" Margin="10,184,382,536.4"/>

@@ -10,7 +10,11 @@
         WindowStyle="ThreeDBorderWindow"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Sales History" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,0,351,325" />
         <ListView Name="ListViewSales" FontSize="16" Background="Black" Opacity="0.9" FontStyle="Italic" Margin="0,66,0,79" Foreground="Turquoise">
             <ListView.View>

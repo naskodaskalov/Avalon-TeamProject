@@ -38,7 +38,11 @@
     </Window.Resources>
 
     <Grid>
-        <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        <Border 
+                  BorderBrush="White"
+                  BorderThickness="1">
+            <Image Source="/Images/beer-wallpaper.jpg" Stretch="UniformToFill" />
+        </Border>
         <Label Content="Add Sale" Foreground="Turquoise" FontWeight="Bold" FontSize="30" Margin="10,10,50,678.4" />
         <Label Content="Date" Foreground="Turquoise"  FontSize="16" Margin="10,89,595.4,624.4"/>
         <Label Content="Seller" Foreground="Turquoise"  FontSize="16" Margin="490,89,191.4,631.4" RenderTransformOrigin="1.035,0.476"/>
