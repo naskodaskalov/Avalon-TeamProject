@@ -80,7 +80,7 @@ namespace Avalon.Service
         {
             using (AvalonContext context = new AvalonContext())
             {
-                var clients = context.Customers.ToList();
+                var clients = context.Customers.Where(b => b.Name.Contains(name)).OrderBy(b => b.Name).ToList();
 
                 var result = new ObservableCollection<Customer>();
                 foreach (var client in clients)
