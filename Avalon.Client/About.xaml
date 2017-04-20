@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="About" Height="500" Width="500"
+        Title="Avalon's Beers Platform :: About" Height="500" Width="500"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">
@@ -25,6 +25,5 @@
         <Label Name="Person2" Content="Emil Mihaylov" FontSize="20" Foreground="Turquoise" Margin="10,346,10,116" HorizontalContentAlignment="Center" FontStyle="Italic"/>
         <Label Name="Person3" Content="Nasko Daskalov" FontSize="20" Foreground="Turquoise" Margin="10,384,10,80" HorizontalContentAlignment="Center" FontStyle="Italic"/>
         <Label Name="Person4" Content="Petar Petrov" FontSize="20" Foreground="Turquoise" Margin="10,420,10,45" HorizontalContentAlignment="Center" FontStyle="Italic"/>
-
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Add new beer" Height="500" Width="330"
+        Title="Avalon's Beers Platform :: Add new beer" Height="500" Width="330"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">

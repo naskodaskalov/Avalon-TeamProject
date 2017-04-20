@@ -1,29 +1,14 @@
-﻿using Avalon.Models.GridModels;
-using Avalon.Service;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using iTextSharp;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
-using System.IO;
-using System.Diagnostics;
-using Avalon.Data;
-
-namespace Avalon.Client
+﻿namespace Avalon.Client
 {
+    using Avalon.Models.GridModels;
+    using Avalon.Service;
+    using System.Collections.ObjectModel;
+    using System.Windows;
+    using iTextSharp.text;
+    using iTextSharp.text.pdf;
+    using System.IO;
+    using System.Diagnostics;
+
     /// <summary>
     /// Interaction logic for ShowSales.xaml
     /// </summary>

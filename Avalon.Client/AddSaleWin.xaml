@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Add Sale" Height="750" Width="750"
+        Title="Avalon's Beers Platform :: Add new Sale" Height="750" Width="750"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">

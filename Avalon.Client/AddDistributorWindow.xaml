@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="AddDistributor" Height="500" Width="500"
+        Title="Avalon's Beers Platform :: Add new Distributor" Height="500" Width="500"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">

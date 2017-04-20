@@ -18,7 +18,6 @@
         </Border>
         <StackPanel>
 
-
             <!--Top menu -->
             <StackPanel >
                 <Menu Width="Auto" Height="30"  >
@@ -32,7 +31,6 @@
                     <MenuItem Header="Search" FontSize="20">
                         <MenuItem x:Name="SearchBeer" Header="Search Beer" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
                         <MenuItem x:Name="SearchClient" Header="Search Client" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
-                        <MenuItem x:Name="SearchSale" Header="Search Sale" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler" />
                         <MenuItem x:Name="SearchDistributor" Header="Search Distributor" HorizontalAlignment="Left" Width="auto" Click="CommonMenuClickHandler"/>
                     </MenuItem>
 
@@ -66,10 +64,9 @@
 
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="50">
-                    <Button x:Name="SearchBeerBtn" Content="Search Beer" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler" />
-                    <Button x:Name="SearchClientBtn" Content="Search Client"  FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
-                    <Button x:Name="SearchSaleBtn" Content="Search Sale" FontSize="20" Cursor="Hand" Padding="10" Margin="15" Click="CommonMenuClickHandler"/>
+                <StackPanel Grid.Column="1" Margin="50" VerticalAlignment="Center">
+                    <Button x:Name="SearchBeerBtn" Content="Search Beer" FontSize="20" Cursor="Hand" Padding="10" Margin="15,15,14.6,15" Click="CommonMenuClickHandler" />
+                    <Button x:Name="SearchClientBtn" Content="Search Client"  FontSize="20" Cursor="Hand" Padding="10" Margin="15,15,14.6,15" Click="CommonMenuClickHandler"/>
                 </StackPanel>
             </Grid>
 

@@ -1,6 +1,5 @@
 ﻿using Avalon.Data;
 using Avalon.Models;
-using Avalon.Models.GridModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;

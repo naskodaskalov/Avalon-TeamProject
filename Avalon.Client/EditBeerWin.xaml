@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="Edit beer" Height="507.2" Width="492.8"
+        Title="Avalon's Beers Platform :: Edit beer" Height="507.2" Width="492.8"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen">

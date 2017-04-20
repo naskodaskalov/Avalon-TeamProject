@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Avalon.Client"
         mc:Ignorable="d"
-        Title="All Sales" Height="420" Width="900"
+        Title="Avalon's Beers Platform :: Sales History" Height="420" Width="900"
         ResizeMode="NoResize"
         WindowStyle="ThreeDBorderWindow"
         WindowStartupLocation="CenterScreen">

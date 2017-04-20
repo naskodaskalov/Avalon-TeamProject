@@ -1,9 +1,9 @@
-﻿using Avalon.Models;
-using Avalon.Service;
-using System.Windows;
-
-namespace Avalon.Client
+﻿namespace Avalon.Client
 {
+    using Avalon.Models;
+    using Avalon.Service;
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for SearchEditBeerWin.xaml
     /// </summary>

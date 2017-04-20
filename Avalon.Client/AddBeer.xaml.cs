@@ -1,11 +1,11 @@
-﻿using Avalon.Service;
-using System;
-using System.Collections.ObjectModel;
-using System.Windows;
-using System.Windows.Controls;
-
-namespace Avalon.Client
+﻿namespace Avalon.Client
 {
+    using Avalon.Service;
+    using System;
+    using System.Collections.ObjectModel;
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for AddBeer.xaml
     /// </summary>

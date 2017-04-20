@@ -1,5 +1,4 @@
-﻿
-namespace Avalon.Service
+﻿namespace Avalon.Service
 {
     using Avalon.Data;
 
